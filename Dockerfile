@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libpng-dev \
     libonig-dev \
-    libxml2-dev
+    libxml2-dev \
+    nodejs \
+    npm
 
 # Install PHP extensions
 RUN docker-php-ext-install \
@@ -40,6 +42,12 @@ RUN mkdir -p storage/framework/cache \
 
 # Install Laravel dependencies
 RUN composer install --no-dev --optimize-autoloader
+
+# Install Node dependencies
+RUN npm install
+
+# Build Vite assets
+RUN npm run build
 
 # Permissions
 RUN chmod -R 777 storage bootstrap/cache
