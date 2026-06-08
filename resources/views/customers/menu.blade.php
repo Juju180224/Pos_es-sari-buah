@@ -521,7 +521,7 @@
 
                 @foreach ($products as $product)
                     <div class="card" data-name="{{ strtolower($product->name) }}"
-                        data-category="{{ $product->category->slug ?? 'all' }}">
+                    data-category="all"
 
 
 <!-- IMAGE -->
