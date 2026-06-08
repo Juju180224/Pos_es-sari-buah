@@ -11,15 +11,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Factory|View|\Illuminate\View\View
-     */
     public function index(Request $request)
     {
         $products = Product::query()
@@ -29,85 +23,75 @@ class ProductController extends Controller
 
         return $request->wantsJson()
             ? response()->json($products)
-            : view('products.index', ['products' => $products]);
+            : view('products.index', compact('products'));
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(): View|Factory
     {
         return view('products.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return RedirectResponse
-     */
-    public function store(ProductStoreRequest $request)
+    public function store(ProductStoreRequest $request): RedirectResponse
     {
         $productData = $request->validated();
 
         if ($request->hasFile('image')) {
-            $productData['image'] = $request->file('image')->store('products', 'public');
+
+            $image = $request->file('image');
+
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            $image->move(public_path('products'), $imageName);
+
+            $productData['image'] = $imageName;
         }
 
         Product::create($productData);
 
-        return redirect()->route('products.index')
+        return redirect()
+            ->route('products.index')
             ->with('success', __('product.success_creating'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product): void
+    public function edit(Product $product): View|Factory
     {
-        //
+        return view('products.edit', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return Factory|View|\Illuminate\View\View
-     */
-    public function edit(Product $product)
-    {
-        return view('products.edit')->with('product', $product);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return RedirectResponse
-     */
-    public function update(ProductUpdateRequest $request, Product $product)
+    public function update(ProductUpdateRequest $request, Product $product): RedirectResponse
     {
         $productData = $request->validated();
 
         if ($request->hasFile('image')) {
-            if ($product->image) {
-                Storage::disk('public')->delete($product->image);
+
+            if ($product->image && file_exists(public_path('products/' . $product->image))) {
+
+                unlink(public_path('products/' . $product->image));
             }
-            $productData['image'] = $request->file('image')->store('products', 'public');
+
+            $image = $request->file('image');
+
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            $image->move(public_path('products'), $imageName);
+
+            $productData['image'] = $imageName;
         }
 
         $product->update($productData);
 
-        return redirect()->route('products.index')
+        return redirect()
+            ->route('products.index')
             ->with('success', __('product.success_updating'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Product $product): JsonResponse
     {
-        if ($product->image) {
-            Storage::disk('public')->delete($product->image);
+        if ($product->image && file_exists(public_path('products/' . $product->image))) {
+
+            unlink(public_path('products/' . $product->image));
         }
+
         $product->delete();
 
         return response()->json(['success' => true]);

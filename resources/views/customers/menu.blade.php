@@ -523,14 +523,15 @@
                     <div class="card" data-name="{{ strtolower($product->name) }}"
                         data-category="{{ $product->category->slug ?? 'all' }}">
 
+
                         <!-- IMAGE -->
                         <div class="card-img-wrap">
 
-                            <img
-                                src="{{ $product->image
-                                    ? asset('storage/products/' . $product->image)
-                                    : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}">
-                            alt="{{ $product->name }}">
+                            <img src="{{ $product->image
+                                ? asset('products/' . $product->image)
+                                : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
+                                alt="{{ $product->name }}" loading="lazy">
+
                         </div>
 
                         <!-- BODY -->
