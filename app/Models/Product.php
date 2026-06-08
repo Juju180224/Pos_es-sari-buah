@@ -33,6 +33,28 @@ class Product extends Model
         'status' => 'integer',
     ];
 
+    public function scopeLowStock($query)
+    {
+        return $query->where('quantity', '<=', 5);
+    }
+
+    public function scopeBestSelling($query)
+    {
+        return $query->orderBy('quantity', 'desc');
+    }
+
+    public function scopeCurrentMonthBestSelling($query)
+    {
+        return $query->whereMonth('created_at', now()->month)
+            ->orderBy('quantity', 'desc');
+    }
+
+    public function scopePastMonthsHotProducts($query)
+    {
+        return $query->where('created_at', '<', now()->startOfMonth())
+            ->orderBy('quantity', 'desc');
+    }
+
     public function getImageUrlAttribute()
     {
         if (empty($this->image)) {
