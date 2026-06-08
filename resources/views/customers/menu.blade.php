@@ -526,9 +526,8 @@
                         <!-- IMAGE -->
 
                         <div class="card-img-wrap">
-
-                            <img src="{{ asset('products/' . basename($product->gambar)) }}" alt="{{ $product->name }}"
-                                loading="lazy" onerror="this.src='{{ asset('images/img-placeholder.jpg') }}'">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->nama_produk }}" loading="lazy"
+                                onerror="this.src='{{ asset('images/img-placeholder.jpg') }}'">
 
                         </div>
 
