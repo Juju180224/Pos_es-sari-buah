@@ -11,21 +11,22 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
-use Throwable;
 
 class MenuController extends Controller
 {
     public function index()
     {
-        $products = Product::query()->orderBy('created_at', 'desc')->get();
+        $products = Product::query()
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        return view('customers.menu', \compact('products'));
+        return view('customers.menu', compact('products'));
     }
 
     public function addToCart(Request $request)
     {
         $request->validate([
-            'product_id' => 'required|exists:products,id'
+            'product_id' => 'required|exists:produk,id_produk'
         ]);
 
         $cart = Session::get('cart', []);
@@ -34,13 +35,19 @@ class MenuController extends Controller
             $request->input('product_id')
         );
 
-        if (isset($cart[$product->id])) {
-            $cart[$product->id]['qty']++;
+        if (isset($cart[$product->id_produk])) {
+
+            $cart[$product->id_produk]['qty']++;
         } else {
-            $cart[$product->id] = [
-                'id'    => $product->id,
-                'name'  => $product->name,
-                'price' => (float) $product->price,
+
+            $cart[$product->id_produk] = [
+
+                'id'    => $product->id_produk,
+
+                'name'  => $product->nama_produk,
+
+                'price' => (float) $product->harga_jual,
+
                 'qty'   => 1
             ];
         }
@@ -50,7 +57,7 @@ class MenuController extends Controller
         return Response::json([
             'success'    => true,
             'message'    => 'Produk ditambahkan',
-            'cart_count' => \count($cart)
+            'cart_count' => count($cart)
         ]);
     }
 
@@ -65,16 +72,21 @@ class MenuController extends Controller
         $productId = $request->input('product_id');
 
         if (isset($cart[$productId])) {
+
             if ($cart[$productId]['qty'] > 1) {
+
                 $cart[$productId]['qty']--;
             } else {
+
                 unset($cart[$productId]);
             }
         }
 
         Session::put('cart', $cart);
 
-        return Response::json(['success' => true]);
+        return Response::json([
+            'success' => true
+        ]);
     }
 
     public function getCart()
@@ -82,7 +94,9 @@ class MenuController extends Controller
         $cart = Session::get('cart', []);
 
         $total = 0;
+
         foreach ($cart as $item) {
+
             $total += $item['price'] * $item['qty'];
         }
 
@@ -97,12 +111,15 @@ class MenuController extends Controller
         $cart = Session::get('cart', []);
 
         if (empty($cart)) {
-            return Redirect::back()->with('error', 'Keranjang kosong');
+
+            return Redirect::back()
+                ->with('error', 'Keranjang kosong');
         }
 
         DB::beginTransaction();
 
         try {
+
             $order = Order::query()->create([
                 'customer_id' => null,
                 'user_id'     => 1,
@@ -110,7 +127,9 @@ class MenuController extends Controller
             ]);
 
             foreach ($cart as $productId => $item) {
-                $product = Product::query()->find($productId);
+
+                $product = Product::query()
+                    ->find($productId);
 
                 OrderItem::query()->create([
                     'order_id'   => $order->id,
@@ -120,7 +139,11 @@ class MenuController extends Controller
                 ]);
 
                 if ($product) {
-                    $product->decrement('quantity', $item['qty']);
+
+                    $product->decrement(
+                        'stok',
+                        $item['qty']
+                    );
                 }
             }
 
@@ -128,11 +151,14 @@ class MenuController extends Controller
 
             Session::forget('cart');
 
-            return Redirect::to('/menu')->with('success', 'Pesanan berhasil dikirim');
+            return Redirect::to('/menu')
+                ->with('success', 'Pesanan berhasil dikirim');
         } catch (\Throwable $e) {
+
             DB::rollBack();
 
-            return Redirect::back()->with('error', $e->getMessage());
+            return Redirect::back()
+                ->with('error', $e->getMessage());
         }
     }
 }

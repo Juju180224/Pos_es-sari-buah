@@ -3,47 +3,21 @@
 namespace App\Models;
 
 use App\Traits\ProductScopes;
-use Database\Factories\ProductFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Storage;
 
 /**
- * @property int $id
- * @property string $name
- * @property string|null $description
- * @property string|null $image
- * @property string $barcode
- * @property numeric $price
- * @property string|null $purchase_price
- * @property int $quantity
- * @property bool $status
+ * @property int $id_produk
+ * @property string $nama_produk
+ * @property string|null $gambar
+ * @property string $kode_produk
+ * @property numeric $harga_jual
+ * @property int $stok
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read string $image_url
- * @method static Builder<static>|Product active()
- * @method static Builder<static>|Product bestSelling()
- * @method static Builder<static>|Product currentMonthBestSelling()
- * @method static \Database\Factories\ProductFactory factory($count = null, $state = [])
- * @method static Builder<static>|Product lowStock()
- * @method static Builder<static>|Product newModelQuery()
- * @method static Builder<static>|Product newQuery()
- * @method static Builder<static>|Product pastMonthsHotProducts()
- * @method static Builder<static>|Product query()
- * @method static Builder<static>|Product search($term)
- * @method static Builder<static>|Product whereBarcode($value)
- * @method static Builder<static>|Product whereCreatedAt($value)
- * @method static Builder<static>|Product whereDescription($value)
- * @method static Builder<static>|Product whereId($value)
- * @method static Builder<static>|Product whereImage($value)
- * @method static Builder<static>|Product whereName($value)
- * @method static Builder<static>|Product wherePrice($value)
- * @method static Builder<static>|Product wherePurchasePrice($value)
- * @method static Builder<static>|Product whereQuantity($value)
- * @method static Builder<static>|Product whereStatus($value)
- * @method static Builder<static>|Product whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Product extends Model
@@ -51,32 +25,131 @@ class Product extends Model
     use HasFactory;
     use ProductScopes;
 
+    /*
+    |--------------------------------------------------------------------------
+    | TABLE
+    |--------------------------------------------------------------------------
+    */
+
+    protected $table = 'produk';
+
+    protected $primaryKey = 'id_produk';
+
+    public $incrementing = true;
+
+    protected $keyType = 'int';
+
+    /*
+    |--------------------------------------------------------------------------
+    | FILLABLE
+    |--------------------------------------------------------------------------
+    */
+
     protected $fillable = [
-        'name',
-        'description',
-        'image',
-        'barcode',
-        'price',
-        'quantity',
-        'status'
+        'kode_produk',
+        'nama_produk',
+        'gambar',
+        'merk',
+        'harga_beli',
+        'diskon',
+        'harga_jual',
+        'stok',
+        'stok_minimal',
+        'id_kategori',
+        'id_satuan'
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | CASTS
+    |--------------------------------------------------------------------------
+    */
 
     protected $casts = [
-        'price' => 'decimal:2',
-        'quantity' => 'integer',
-        'status' => 'boolean',
+        'harga_jual' => 'decimal:2',
+        'stok' => 'integer',
     ];
 
-    protected $appends = ['image_url'];
-    /**
-     * Get the product image URL.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | APPENDS
+    |--------------------------------------------------------------------------
+    */
+
+    protected $appends = [
+        'image_url'
+    ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | ATTRIBUTE MAPPING
+    |--------------------------------------------------------------------------
+    */
+
+    // AGAR $product->name BISA DIPAKAI
+    public function getNameAttribute()
+    {
+        return $this->nama_produk;
+    }
+
+    // AGAR $product->image BISA DIPAKAI
+    public function getImageAttribute()
+    {
+        return $this->gambar;
+    }
+
+    // AGAR $product->price BISA DIPAKAI
+    public function getPriceAttribute()
+    {
+        return $this->harga_jual;
+    }
+
+    // AGAR $product->quantity BISA DIPAKAI
+    public function getQuantityAttribute()
+    {
+        return $this->stok;
+    }
+
+    // AGAR $product->barcode BISA DIPAKAI
+    public function getBarcodeAttribute()
+    {
+        return $this->kode_produk;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | IMAGE URL
+    |--------------------------------------------------------------------------
+    */
+
     public function getImageUrlAttribute(): string
     {
-        if ($this->image) {
-            return Storage::disk('public')->url($this->image);
+        if ($this->gambar) {
+
+            return asset('products/' . $this->gambar);
         }
 
         return asset('images/img-placeholder.jpg');
+    }
+
+
+    /*
+|--------------------------------------------------------------------------
+| SCOPES
+|--------------------------------------------------------------------------
+*/
+
+    public function scopeSearch(Builder $query, ?string $term): Builder
+    {
+        if ($term) {
+
+            $query->where(
+                'nama_produk',
+                'LIKE',
+                '%' . $term . '%'
+            );
+        }
+
+        return $query;
     }
 }
