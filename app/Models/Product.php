@@ -33,6 +33,13 @@ class Product extends Model
         'status' => 'integer',
     ];
 
+    public function scopeSearch($query, $keyword)
+    {
+        return $query->when($keyword, function ($q) use ($keyword) {
+            $q->where('name', 'like', "%{$keyword}%")
+                ->orWhere('barcode', 'like', "%{$keyword}%");
+        });
+    }
     public function scopeLowStock($query)
     {
         return $query->where('quantity', '<=', 5);
