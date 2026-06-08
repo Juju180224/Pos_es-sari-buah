@@ -1,23 +1,17 @@
-FROM php:8.2-fpm
+FROM php:8.2-cli
 
-# =========================
-# System dependencies
-# =========================
+# Install dependencies
 RUN apt-get update && apt-get install -y \
-    nginx \
-    supervisor \
     git \
     unzip \
     curl \
+    zip \
     libzip-dev \
     libpng-dev \
     libonig-dev \
-    libxml2-dev \
-    zip
+    libxml2-dev
 
-# =========================
-# PHP Extensions
-# =========================
+# Install PHP extensions
 RUN docker-php-ext-install \
     pdo \
     pdo_mysql \
@@ -28,45 +22,24 @@ RUN docker-php-ext-install \
     gd \
     zip
 
-# =========================
-# Composer
-# =========================
+# Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# =========================
-# App directory
-# =========================
+# Working directory
 WORKDIR /var/www
 
+# Copy project
 COPY . .
 
-# =========================
-# Install dependencies
-# =========================
+# Install Laravel dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# =========================
-# Permissions
-# =========================
-RUN chmod -R 775 storage bootstrap/cache
+# Laravel permissions
+RUN chmod -R 777 storage bootstrap/cache
 
-# =========================
-# Copy configs
-# =========================
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-COPY docker/supervisor.conf /etc/supervisor/conf.d/supervisord.conf
-COPY docker/php.ini /usr/local/etc/php/php.ini
-COPY start.sh /start.sh
-
-RUN chmod +x /start.sh
-
-# =========================
-# Laravel optimizations
-# =========================
-RUN php artisan config:cache || true
-RUN php artisan route:cache || true
-RUN php artisan view:cache || true
+RUN php artisan key:generate
 
 EXPOSE 8080
 
-CMD ["/start.sh"]
+
+CMD php artisan serve --host=0.0.0.0 --port=8080

@@ -1,5 +1,7 @@
-
 <?php
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Customer\MenuController;
@@ -13,18 +15,15 @@ use App\Http\Controllers\Pos\OrderController;
 use App\Http\Controllers\Settings\SettingController;
 use App\Http\Controllers\SmartController;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | ROOT
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', fn(): Redirector|RedirectResponse => redirect('/admin'));
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -36,17 +35,15 @@ Auth::routes();
 
 /*
 |--------------------------------------------------------------------------
-| QR MENU
+| PUBLIC MENU (QR MENU)
 |--------------------------------------------------------------------------
 */
 
 Route::prefix('menu')->group(function () {
 
-    Route::get('/', [MenuController::class, 'index'])
-        ->name('menu');
+    Route::get('/', [MenuController::class, 'index'])->name('menu');
 
     Route::post('/cart/add', [MenuController::class, 'addToCart']);
-
     Route::post('/cart/remove', [MenuController::class, 'removeFromCart']);
 
     Route::get('/cart', [MenuController::class, 'getCart']);
@@ -57,29 +54,22 @@ Route::prefix('menu')->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| ADMIN AREA
+| ADMIN AREA (PROTECTED)
 |--------------------------------------------------------------------------
 */
 
 Route::prefix('admin')
     ->middleware(['auth', 'locale'])
-    ->group(function (): void {
+    ->group(function () {
 
         /*
-    |--------------------------------------------------------------------------
-    | DASHBOARD
-    |--------------------------------------------------------------------------
-    */
-
-        Route::get('/', HomeController::class)
-            ->name('home');
+        | DASHBOARD
+        */
+        Route::get('/', HomeController::class)->name('home');
 
         /*
-    |--------------------------------------------------------------------------
-    | SETTINGS
-    |--------------------------------------------------------------------------
-    */
-
+        | SETTINGS
+        */
         Route::get('/settings', [SettingController::class, 'index'])
             ->name('settings.index');
 
@@ -87,77 +77,36 @@ Route::prefix('admin')
             ->name('settings.store');
 
         /*
-    |--------------------------------------------------------------------------
-    | MASTER DATA
-    |--------------------------------------------------------------------------
-    */
-
+        | MASTER DATA
+        */
         Route::resource('products', ProductController::class);
-
         Route::resource('customers', CustomerController::class);
-
         Route::resource('orders', OrderController::class);
-
         Route::resource('suppliers', SupplierController::class);
 
         /*
-    |--------------------------------------------------------------------------
-    | ORDER NOTIFICATION
-    |--------------------------------------------------------------------------
-    */
-
+        | ORDER LATEST (SIMPLIFIED)
+        */
         Route::get('/orders/latest', function () {
-
             return \App\Models\Order::with('items.product')
                 ->latest()
                 ->take(5)
-                ->get()
-                ->map(function ($order) {
-
-                    return [
-
-                        'id' => $order->id,
-
-                        'total' => $order->total(),
-
-                        'status' => $order->status,
-
-                        'items' => $order->items->map(function ($item) {
-
-                            return [
-
-                                'name' => $item->product->name,
-
-                                'qty' => $item->quantity
-                            ];
-                        })
-                    ];
-                });
-        })->name('orders.latest');
+                ->get();
+        });
 
         /*
-    |--------------------------------------------------------------------------
-    | POS CART
-    |--------------------------------------------------------------------------
-    */
-
-        Route::get('/cart', [CartController::class, 'index'])
-            ->name('cart.index');
-
-        Route::post('/cart', [CartController::class, 'store'])
-            ->name('cart.store');
-
+        | POS CART
+        */
+        Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+        Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
         Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
-
         Route::delete('/cart/delete', [CartController::class, 'delete']);
-
         Route::delete('/cart/empty', [CartController::class, 'empty']);
 
         /*
-    |--------------------------------------------------------------------------
-    | PURCHASE
-    |--------------------------------------------------------------------------
-    */
+        | PURCHASE
+        */
+        Route::resource('purchases', PurchaseController::class);
 
         Route::get('/purchases/data', [PurchaseController::class, 'data'])
             ->name('purchases.data');
@@ -165,73 +114,41 @@ Route::prefix('admin')
         Route::get('/purchases/{purchase}/receipt', [PurchaseController::class, 'receipt'])
             ->name('purchases.receipt');
 
-        Route::resource('purchases', PurchaseController::class);
-
         /*
-    |--------------------------------------------------------------------------
-    | PURCHASE CART
-    |--------------------------------------------------------------------------
-    */
-
+        | PURCHASE CART
+        */
         Route::prefix('purchase-cart')
             ->name('purchase-cart.')
-            ->group(function (): void {
+            ->group(function () {
 
-                Route::get('/', [PurchaseCartController::class, 'index'])
-                    ->name('index');
-
-                Route::post('/', [PurchaseCartController::class, 'store'])
-                    ->name('store');
-
-                Route::post('/change-qty', [PurchaseCartController::class, 'changeQty'])
-                    ->name('change-qty');
-
-                Route::post('/change-price', [PurchaseCartController::class, 'changePrice'])
-                    ->name('change-price');
-
-                Route::delete('/delete', [PurchaseCartController::class, 'delete'])
-                    ->name('delete');
-
-                Route::delete('/empty', [PurchaseCartController::class, 'empty'])
-                    ->name('empty');
+                Route::get('/', [PurchaseCartController::class, 'index'])->name('index');
+                Route::post('/', [PurchaseCartController::class, 'store'])->name('store');
+                Route::post('/change-qty', [PurchaseCartController::class, 'changeQty'])->name('change-qty');
+                Route::post('/change-price', [PurchaseCartController::class, 'changePrice'])->name('change-price');
+                Route::delete('/delete', [PurchaseCartController::class, 'delete'])->name('delete');
+                Route::delete('/empty', [PurchaseCartController::class, 'empty'])->name('empty');
             });
 
         /*
-    |--------------------------------------------------------------------------
-    | ORDERS EXTRA
-    |--------------------------------------------------------------------------
-    */
-
-        Route::post(
-            '/orders/partial-payment',
-            [OrderController::class, 'partialPayment']
-        )->name('orders.partial-payment');
+        | EXTRA ORDER PAYMENT
+        */
+        Route::post('/orders/partial-payment', [OrderController::class, 'partialPayment'])
+            ->name('orders.partial-payment');
 
         /*
-    |--------------------------------------------------------------------------
-    | TRANSLATION
-    |--------------------------------------------------------------------------
-    */
-
+        | TRANSLATION
+        */
         Route::get('/locale/{type}', function ($type) {
-
             return response()->json(trans($type));
         });
 
         /*
-    |--------------------------------------------------------------------------
-    | LANGUAGE SWITCH
-    |--------------------------------------------------------------------------
-    */
-
+        | LANGUAGE SWITCH
+        */
         Route::get('/lang-switch/{lang}', function ($lang) {
 
-            $supportedLocales = ['en', 'id'];
-
-            if (in_array($lang, $supportedLocales)) {
-
+            if (in_array($lang, ['en', 'id'])) {
                 session(['locale' => $lang]);
-
                 app()->setLocale($lang);
             }
 
@@ -239,58 +156,14 @@ Route::prefix('admin')
         })->name('lang.switch');
 
         /*
-    |--------------------------------------------------------------------------
-    | SMART ANALYSIS
-    |--------------------------------------------------------------------------
-    */
-
-        Route::prefix('smart')
-            ->name('smart.')
-            ->group(function () {
-
-                /*
-        |--------------------------------------------------------------------------
-        | DATA KRITERIA
-        |--------------------------------------------------------------------------
+        | SMART MODULE
         */
+        Route::prefix('smart')->name('smart.')->group(function () {
 
-                Route::get('/kriteria', [SmartController::class, 'kriteria'])
-                    ->name('kriteria');
-
-                /*
-        |--------------------------------------------------------------------------
-        | DATA ALTERNATIF
-        |--------------------------------------------------------------------------
-        */
-
-                Route::get('/alternatif', [SmartController::class, 'alternatif'])
-                    ->name('alternatif');
-
-                /*
-        |--------------------------------------------------------------------------
-        | PENILAIAN
-        |--------------------------------------------------------------------------
-        */
-
-                Route::get('/penilaian', [SmartController::class, 'penilaian'])
-                    ->name('penilaian');
-
-                /*
-        |--------------------------------------------------------------------------
-        | PROSES SMART
-        |--------------------------------------------------------------------------
-        */
-
-                Route::get('/proses', [SmartController::class, 'proses'])
-                    ->name('proses');
-
-                /*
-        |--------------------------------------------------------------------------
-        | HASIL SMART
-        |--------------------------------------------------------------------------
-        */
-
-                Route::get('/hasil', [SmartController::class, 'hasil'])
-                    ->name('hasil');
-            });
+            Route::get('/kriteria', [SmartController::class, 'kriteria'])->name('kriteria');
+            Route::get('/alternatif', [SmartController::class, 'alternatif'])->name('alternatif');
+            Route::get('/penilaian', [SmartController::class, 'penilaian'])->name('penilaian');
+            Route::get('/proses', [SmartController::class, 'proses'])->name('proses');
+            Route::get('/hasil', [SmartController::class, 'hasil'])->name('hasil');
+        });
     });
