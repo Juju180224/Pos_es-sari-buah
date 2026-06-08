@@ -26,18 +26,22 @@ class AppServiceProvider extends ServiceProvider
 
         if (! $this->app->runningInConsole()) {
 
-            $settings = Setting::query()
-                ->select('key', 'value')
-                ->get()
-                ->keyBy('key')
-                ->map(fn ($setting) => $setting->value)
-                ->toArray();
+            // cek dulu apakah tabel settings ada
+            if (Schema::hasTable('settings')) {
 
-            config(['settings' => $settings]);
+                $settings = Setting::query()
+                    ->select('key', 'value')
+                    ->get()
+                    ->keyBy('key')
+                    ->map(fn($setting) => $setting->value)
+                    ->toArray();
 
-            // aman dari error jika key tidak ada
-            if (!empty($settings['app_name'])) {
-                config(['app.name' => $settings['app_name']]);
+                config(['settings' => $settings]);
+
+                // aman jika key tidak ada
+                if (!empty($settings['app_name'])) {
+                    config(['app.name' => $settings['app_name']]);
+                }
             }
         }
 
