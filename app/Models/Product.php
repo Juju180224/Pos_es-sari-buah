@@ -6,58 +6,46 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $table = 'products';
 
-    protected $table = 'produk';
-
-
-    protected $primaryKey = 'id_produk';
-
+    protected $primaryKey = 'id';
 
     public $incrementing = true;
-
-
     protected $keyType = 'int';
-
 
     public $timestamps = true;
 
     protected $fillable = [
-        'kode_produk',
-        'nama_produk',
-        'gambar',
-        'merk',
-        'harga_beli',
-        'diskon',
-        'harga_jual',
-        'stok',
-        'stok_minimal',
-        'id_kategori',
-        'id_satuan',
+        'name',
+        'description',
+        'image',
+        'barcode',
+        'price',
+        'purchase_price',
+        'quantity',
+        'status',
     ];
-
 
     protected $casts = [
-        'harga_beli' => 'integer',
-        'harga_jual' => 'integer',
-        'stok' => 'integer',
-        'stok_minimal' => 'integer',
-        'diskon' => 'integer',
+        'price' => 'integer',
+        'purchase_price' => 'integer',
+        'quantity' => 'integer',
+        'status' => 'integer',
     ];
-
 
     public function getImageUrlAttribute()
     {
-        if (empty($this->gambar)) {
+        if (empty($this->image)) {
             return asset('images/img-placeholder.jpg');
         }
 
         if (
-            str_starts_with($this->gambar, 'http://') ||
-            str_starts_with($this->gambar, 'https://')
+            str_starts_with($this->image, 'http://') ||
+            str_starts_with($this->image, 'https://')
         ) {
-            return $this->gambar;
+            return $this->image;
         }
 
-        return asset('products/' . $this->gambar);
+        return asset('products/' . $this->image);
     }
 }

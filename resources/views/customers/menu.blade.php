@@ -520,13 +520,11 @@
             <div class="grid">
 
                 @foreach ($products as $product)
-                    <div class="card" data-name="{{ strtolower($product->name) }}"
-                        data-category="{{ $product->category->slug ?? 'all' }}">
-
+                    <div class="card" data-name="{{ strtolower($product->name) }}" data-category="all">
                         <!-- IMAGE -->
 
                         <div class="card-img-wrap">
-                            <img src="{{ $product->image_url }}" alt="{{ $product->nama_produk }}" loading="lazy"
+                            <img src="{{ $product->image_url }}" alt="{{ $product->nama }}" loading="lazy"
                                 onerror="this.src='{{ asset('images/img-placeholder.jpg') }}'">
 
                         </div>
