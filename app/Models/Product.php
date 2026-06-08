@@ -6,20 +6,7 @@ use App\Traits\ProductScopes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
 
-/**
- * @property int $id_produk
- * @property string $nama_produk
- * @property string|null $gambar
- * @property string $kode_produk
- * @property numeric $harga_jual
- * @property int $stok
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property-read string $image_url
- * @mixin \Eloquent
- */
 class Product extends Model
 {
     use HasFactory;
@@ -86,6 +73,12 @@ class Product extends Model
     |--------------------------------------------------------------------------
     */
 
+    // AGAR $product->id BISA DIPAKAI
+    public function getIdAttribute()
+    {
+        return $this->id_produk;
+    }
+
     // AGAR $product->name BISA DIPAKAI
     public function getNameAttribute()
     {
@@ -132,15 +125,17 @@ class Product extends Model
         return asset('images/img-placeholder.jpg');
     }
 
-
     /*
-|--------------------------------------------------------------------------
-| SCOPES
-|--------------------------------------------------------------------------
-*/
+    |--------------------------------------------------------------------------
+    | SCOPES
+    |--------------------------------------------------------------------------
+    */
 
-    public function scopeSearch(Builder $query, ?string $term): Builder
-    {
+    public function scopeSearch(
+        Builder $query,
+        ?string $term
+    ): Builder {
+
         if ($term) {
 
             $query->where(
