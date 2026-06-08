@@ -2,35 +2,19 @@
 
 namespace App\Models;
 
-use App\Traits\ProductScopes;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
     use HasFactory;
-    use ProductScopes;
-
-    /*
-    |--------------------------------------------------------------------------
-    | TABLE
-    |--------------------------------------------------------------------------
-    */
 
     protected $table = 'produk';
 
     protected $primaryKey = 'id_produk';
 
-    public $incrementing = true;
-
-    protected $keyType = 'int';
-
-    /*
-    |--------------------------------------------------------------------------
-    | FILLABLE
-    |--------------------------------------------------------------------------
-    */
+    public $timestamps = true;
 
     protected $fillable = [
         'kode_produk',
@@ -48,74 +32,41 @@ class Product extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | CASTS
+    | ACCESSOR
     |--------------------------------------------------------------------------
     */
 
-    protected $casts = [
-        'harga_jual' => 'decimal:2',
-        'stok' => 'integer',
-    ];
-
-    /*
-    |--------------------------------------------------------------------------
-    | APPENDS
-    |--------------------------------------------------------------------------
-    */
-
-    protected $appends = [
-        'image_url'
-    ];
-
-    /*
-    |--------------------------------------------------------------------------
-    | ATTRIBUTE MAPPING
-    |--------------------------------------------------------------------------
-    */
-
-    // AGAR $product->id BISA DIPAKAI
     public function getIdAttribute()
     {
         return $this->id_produk;
     }
 
-    // AGAR $product->name BISA DIPAKAI
     public function getNameAttribute()
     {
         return $this->nama_produk;
     }
 
-    // AGAR $product->image BISA DIPAKAI
     public function getImageAttribute()
     {
         return $this->gambar;
     }
 
-    // AGAR $product->price BISA DIPAKAI
     public function getPriceAttribute()
     {
         return $this->harga_jual;
     }
 
-    // AGAR $product->quantity BISA DIPAKAI
     public function getQuantityAttribute()
     {
         return $this->stok;
     }
 
-    // AGAR $product->barcode BISA DIPAKAI
     public function getBarcodeAttribute()
     {
         return $this->kode_produk;
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | IMAGE URL
-    |--------------------------------------------------------------------------
-    */
-
-    public function getImageUrlAttribute(): string
+    public function getImageUrlAttribute()
     {
         if ($this->gambar) {
 
@@ -127,15 +78,12 @@ class Product extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | SCOPES
+    | SEARCH
     |--------------------------------------------------------------------------
     */
 
-    public function scopeSearch(
-        Builder $query,
-        ?string $term
-    ): Builder {
-
+    public function scopeSearch(Builder $query, $term)
+    {
         if ($term) {
 
             $query->where(
