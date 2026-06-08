@@ -524,14 +524,16 @@
                         data-category="{{ $product->category->slug ?? 'all' }}">
 
                         <!-- IMAGE -->
+
                         <div class="card-img-wrap">
 
-                            <img src="{{ $product->image
-                                ? asset('storage/' . $product->image)
-                                : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
-                                alt="{{ $product->name }}">
+                            <img src="{{ asset('products/' . basename($product->gambar)) }}" alt="{{ $product->name }}"
+                                loading="lazy" onerror="this.src='{{ asset('images/img-placeholder.jpg') }}'">
 
                         </div>
+
+
+
 
                         <!-- BODY -->
                         <div class="card-body">
