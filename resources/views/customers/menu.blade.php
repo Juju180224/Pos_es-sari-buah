@@ -5,6 +5,11 @@
     <title>Menu Minuman</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png?v=2') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png?v=2') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png?v=2') }}">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;500;600&display=swap"
@@ -297,15 +302,16 @@
         .card-img-wrap {
             position: relative;
             width: 100%;
-            padding-top: 75%;
+            height: 220px;
+            overflow: hidden;
+            background: #1a1c20;
         }
 
         .card-img-wrap img {
-            position: absolute;
-            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .card-body {
@@ -525,11 +531,17 @@
 
                         <!-- IMAGE -->
                         @php
-                            $imagePath = $product->image ? 'storage/' . ltrim($product->image, '/') : null;
+                            $imagePath = $product->image
+                                ? asset('storage/' . ltrim($product->image, '/'))
+                                : asset('images/no-image.png');
                         @endphp
 
-                        <img src="{{ $imagePath ? asset($imagePath) : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
-                            alt="{{ $product->name }}">
+                        <div class="card-img-wrap">
+
+                            <img src="{{ $imagePath }}" alt="{{ $product->name }}" loading="lazy"
+                                onerror="this.src='{{ asset('images/no-image.png') }}'">
+
+                        </div>
                         <!-- BODY -->
                         <div class="card-body">
 
