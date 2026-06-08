@@ -14,7 +14,7 @@ class AddToPurchaseCartRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'barcode' => 'required|string|exists:products,barcode',
+            'kode_produk' => 'required|string|exists:produk,kode_produk',
         ];
     }
 
