@@ -526,11 +526,11 @@
                         <!-- IMAGE -->
                         <div class="card-img-wrap">
 
-                            <img src="{{ $product->image
-                                ? asset('storage/' . $product->image)
-                                : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
-                                alt="{{ $product->name }}">
-
+                            <img
+                                src="{{ $product->image
+                                    ? asset('storage/products/' . $product->image)
+                                    : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}">
+                            alt="{{ $product->name }}">
                         </div>
 
                         <!-- BODY -->
