@@ -1,4 +1,4 @@
-FROM php:8.2-cli
+FROM php:8.2.28-cli
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -25,7 +25,7 @@ RUN docker-php-ext-install \
     zip
 
 # Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.8 /usr/bin/composer /usr/bin/composer
 
 # Working directory
 WORKDIR /var/www
