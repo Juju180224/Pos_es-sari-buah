@@ -524,15 +524,12 @@
                         data-category="{{ $product->category->slug ?? 'all' }}">
 
                         <!-- IMAGE -->
-                        <div class="card-img-wrap">
+                        @php
+                            $imagePath = $product->image ? 'storage/' . ltrim($product->image, '/') : null;
+                        @endphp
 
-                            <img src="{{ $product->image
-                                ? asset('storage/' . $product->image)
-                                : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
-                                alt="{{ $product->name }}">
-
-                        </div>
-
+                        <img src="{{ $imagePath ? asset($imagePath) : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
+                            alt="{{ $product->name }}">
                         <!-- BODY -->
                         <div class="card-body">
 
