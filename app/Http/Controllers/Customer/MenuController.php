@@ -23,6 +23,11 @@ class MenuController extends Controller
         return view('customers.menu', compact('products'));
     }
 
+    /*
+    |------------------------------------------------------------------
+    | ADD TO CART (FIXED)
+    |------------------------------------------------------------------
+    */
     public function addToCart(Request $request)
     {
         $request->validate([
@@ -31,17 +36,17 @@ class MenuController extends Controller
 
         $cart = Session::get('cart', []);
 
-        $product = Product::query()->findOrFail(
-            $request->input('product_id')
-        );
+        $product = Product::findOrFail($request->input('product_id'));
 
-        if (isset($cart[$product->id_produk])) {
+        $productId = $product->id;
 
-            $cart[$product->id_produk]['qty']++;
+        if (isset($cart[$productId])) {
+
+            $cart[$productId]['qty']++;
         } else {
 
-            $cart[$product->id] = [
-                'id'    => $product->id,
+            $cart[$productId] = [
+                'id'    => $productId,
                 'name'  => $product->name,
                 'price' => $product->price,
                 'qty'   => 1
@@ -57,6 +62,11 @@ class MenuController extends Controller
         ]);
     }
 
+    /*
+    |------------------------------------------------------------------
+    | REMOVE FROM CART
+    |------------------------------------------------------------------
+    */
     public function removeFromCart(Request $request)
     {
         $request->validate([
@@ -70,10 +80,8 @@ class MenuController extends Controller
         if (isset($cart[$productId])) {
 
             if ($cart[$productId]['qty'] > 1) {
-
                 $cart[$productId]['qty']--;
             } else {
-
                 unset($cart[$productId]);
             }
         }
@@ -85,6 +93,11 @@ class MenuController extends Controller
         ]);
     }
 
+    /*
+    |------------------------------------------------------------------
+    | GET CART
+    |------------------------------------------------------------------
+    */
     public function getCart()
     {
         $cart = Session::get('cart', []);
@@ -92,7 +105,6 @@ class MenuController extends Controller
         $total = 0;
 
         foreach ($cart as $item) {
-
             $total += $item['price'] * $item['qty'];
         }
 
@@ -102,21 +114,26 @@ class MenuController extends Controller
         ]);
     }
 
+    /*
+    |------------------------------------------------------------------
+    | CHECKOUT (FIXED + CLEAR CART SAFE)
+    |------------------------------------------------------------------
+    */
     public function checkout(Request $request)
     {
         $quantities = $request->input('qty', []);
 
         $items = [];
+
         foreach ($quantities as $productId => $qty) {
+
             $qty = (int) $qty;
-            if ($qty <= 0) {
-                continue;
-            }
+
+            if ($qty <= 0) continue;
 
             $product = Product::find($productId);
-            if (!$product) {
-                continue;
-            }
+
+            if (!$product) continue;
 
             $items[] = [
                 'product' => $product,
@@ -131,6 +148,7 @@ class MenuController extends Controller
         DB::beginTransaction();
 
         try {
+
             $order = Order::create([
                 'customer_id' => null,
                 'user_id'     => null,
@@ -138,8 +156,9 @@ class MenuController extends Controller
             ]);
 
             foreach ($items as $item) {
+
                 $product = $item['product'];
-                $qty = $item['qty'];
+                $qty     = $item['qty'];
 
                 OrderItem::create([
                     'order_id'   => $order->id,
@@ -153,14 +172,29 @@ class MenuController extends Controller
 
             DB::commit();
 
+            // 🔥 CLEAR CART (IMPORTANT)
             Session::forget('cart');
 
             return redirect()->route('orders.index')
                 ->with('success', 'Pesanan berhasil dikirim');
         } catch (\Throwable $e) {
+
             DB::rollBack();
 
             return back()->with('error', $e->getMessage());
         }
+    }
+
+    /*
+    |------------------------------------------------------------------
+    | CLEAR CART (NEW FUNCTION)
+    |------------------------------------------------------------------
+    */
+    public function clearCart()
+    {
+        Session::forget('cart');
+
+        return redirect()->route('menu')
+            ->with('success', 'Keranjang berhasil dikosongkan');
     }
 }

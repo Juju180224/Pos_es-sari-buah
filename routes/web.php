@@ -39,6 +39,7 @@ Auth::routes();
 |--------------------------------------------------------------------------
 */
 
+
 Route::prefix('menu')->group(function () {
 
     Route::get('/', [MenuController::class, 'index'])->name('menu');
@@ -50,6 +51,7 @@ Route::prefix('menu')->group(function () {
 
     Route::post('/checkout', [MenuController::class, 'checkout'])
         ->name('menu.checkout');
+    Route::get('/clear-cart', [MenuController::class, 'clearCart']);
 });
 
 /*
