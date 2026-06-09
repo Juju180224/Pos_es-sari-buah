@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <label for="kode_produk">{{ __('product.Barcode') }}</label>
 
-                    <input type="text" name="kode_produk" id="kode_produk"
+                    <input type="text" name="barcode" id="barcode"
                         class="form-control @error('kode_produk') is-invalid @enderror" placeholder="Kode Produk"
                         value="{{ old('kode_produk') }}">
 

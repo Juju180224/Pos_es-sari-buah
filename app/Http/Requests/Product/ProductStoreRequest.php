@@ -16,14 +16,13 @@ class ProductStoreRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'image' => ['nullable', 'image', 'max:2048'], // 2MB max
+            'image' => ['nullable', 'image', 'max:2048'],
             'barcode' => ['required', 'string', 'max:50', 'unique:products,barcode'],
-            'price' => ['required', 'numeric', 'min:0', 'decimal:0,2'],
+            'price' => ['required', 'numeric', 'min:0'],
             'quantity' => ['required', 'integer', 'min:0'],
-            'status' => ['required', 'boolean'],
+            'status' => ['required', 'in:0,1'],
         ];
     }
-
     public function messages(): array
     {
         return [
