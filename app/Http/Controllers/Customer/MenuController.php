@@ -26,7 +26,7 @@ class MenuController extends Controller
     public function addToCart(Request $request)
     {
         $request->validate([
-            'product_id' => 'required|exists:produk,id_produk'
+            'product_id' => 'required|exists:products,id'
         ]);
 
         $cart = Session::get('cart', []);
@@ -40,14 +40,10 @@ class MenuController extends Controller
             $cart[$product->id_produk]['qty']++;
         } else {
 
-            $cart[$product->id_produk] = [
-
-                'id'    => $product->id_produk,
-
-                'name'  => $product->nama_produk,
-
-                'price' => (float) $product->harga_jual,
-
+            $cart[$product->id] = [
+                'id'    => $product->id,
+                'name'  => $product->name,
+                'price' => $product->price,
                 'qty'   => 1
             ];
         }
@@ -111,54 +107,47 @@ class MenuController extends Controller
         $cart = Session::get('cart', []);
 
         if (empty($cart)) {
-
-            return Redirect::back()
-                ->with('error', 'Keranjang kosong');
+            return Redirect::back()->with('error', 'Keranjang kosong');
         }
 
         DB::beginTransaction();
 
         try {
 
-            $order = Order::query()->create([
+            $order = Order::create([
                 'customer_id' => null,
-                'user_id'     => 1,
+                'user_id'     => null,
                 'status'      => 'pending',
             ]);
 
             foreach ($cart as $productId => $item) {
 
-                $product = Product::query()
-                    ->find($productId);
+                $product = Product::find($productId);
 
-                OrderItem::query()->create([
+                if (!$product) continue;
+
+                OrderItem::create([
                     'order_id'   => $order->id,
                     'product_id' => $productId,
-                    'price'      => $item['price'] * $item['qty'],
+                    'price'      => $item['price'],   // ✔ harga satuan
                     'quantity'   => $item['qty'],
                 ]);
 
-                if ($product) {
-
-                    $product->decrement(
-                        'stok',
-                        $item['qty']
-                    );
-                }
+                // ✔ stock update
+                $product->decrement('quantity', $item['qty']);
             }
 
             DB::commit();
 
             Session::forget('cart');
 
-            return Redirect::to('/menu')
+            return redirect('/menu')
                 ->with('success', 'Pesanan berhasil dikirim');
         } catch (\Throwable $e) {
 
             DB::rollBack();
 
-            return Redirect::back()
-                ->with('error', $e->getMessage());
+            return back()->with('error', $e->getMessage());
         }
     }
 }
