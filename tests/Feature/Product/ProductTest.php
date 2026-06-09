@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 beforeEach(function () {
     $user = $this->user = User::factory()->create();
@@ -33,7 +34,7 @@ describe('Product Index', function () {
     });
 
     test('guests cannot view products index', function () {
-        auth()->logout();
+        Auth::logout();
         $this->get(route('products.index'))
             ->assertRedirect(route('login'))
             ->assertStatus(302);
@@ -71,7 +72,7 @@ describe('Product Create', function () {
     });
 
     test('guests cannot view create form', function () {
-        auth()->logout();
+        auth::logout();
         $this->get(route('products.create'))
             ->assertRedirect(route('login'));
     });
@@ -141,7 +142,7 @@ describe('Product Store', function () {
         });
 
         test('guests cannot view edit form', function () {
-            auth()->logout();
+            auth::logout();
             $product = Product::factory()->create();
             $this->get(route('products.edit', $product))
                 ->assertRedirect(route('login'))
@@ -222,7 +223,6 @@ describe('Product Store', function () {
 
             Storage::disk('public')->assertMissing($oldImagePath);
         });
-
     });
 
     describe('Product Destroy', function () {
@@ -248,7 +248,7 @@ describe('Product Store', function () {
 
 
         test('guests cannot delete products', function () {
-            auth()->logout();
+            auth::logout();
             $product = Product::factory()->create();
 
             $this->deleteJson(route('products.destroy', $product))
