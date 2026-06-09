@@ -5,7 +5,8 @@
     <title>Menu Minuman</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}?v=3">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -520,17 +521,18 @@
             <div class="grid">
 
                 @foreach ($products as $product)
-                    <div class="card" data-name="{{ strtolower($product->name) }}" data-category="all">
-                        <!-- IMAGE -->
+                    <div class="card" data-name="{{ strtolower($product->name) }}"
+                        data-category="{{ $product->category->slug ?? 'all' }}">
 
+                        <!-- IMAGE -->
                         <div class="card-img-wrap">
-                            <img src="{{ $product->image_url }}" alt="{{ $product->nama }}" loading="lazy"
-                                onerror="this.src='{{ asset('images/img-placeholder.jpg') }}'">
+
+                            <img src="{{ $product->image
+                                ? asset('storage/' . $product->image)
+                                : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
+                                alt="{{ $product->name }}">
 
                         </div>
-
-
-
 
                         <!-- BODY -->
                         <div class="card-body">
@@ -576,7 +578,7 @@
 
                                 <!-- QTY -->
                                 <input type="number" class="qty-input" name="qty[{{ $product->id }}]"
-                                    id="qty{{ $product->id }}" value="0" min="0" readonly>
+                                    id="qty{{ $product->id }}" value="1" min="1" readonly>
 
                                 <!-- PLUS -->
                                 <button type="button" class="qty-btn plus-btn" onclick="plus({{ $product->id }})">
@@ -709,12 +711,6 @@
 
                                 </div>
 
-                                <div>
-                                    <button type="button" onclick="removeFromCart({{ $product->id }})" style="background:none;border:none;color:#fff;font-weight:bold;font-size:1.25rem;cursor:pointer;">
-                                        ×
-                                    </button>
-                                </div>
-
                                 <div class="cart-item-price">
                                     Rp ${(q * p).toLocaleString('id-ID')}
                                 </div>
@@ -764,26 +760,6 @@
         function toggleCartPopup() {
             let popup = document.getElementById('cartPopup');
             popup.classList.toggle('visible');
-        }
-
-        function removeFromCart(id) {
-            let input = document.getElementById('qty' + id);
-            if (!input) {
-                return;
-            }
-
-            input.value = 0;
-            let qtyBox = document.getElementById('qtyBox' + id);
-            if (qtyBox) {
-                qtyBox.classList.remove('visible');
-            }
-
-            let addBtn = document.getElementById('addBtn' + id);
-            if (addBtn) {
-                addBtn.style.display = 'block';
-            }
-
-            updateCart();
         }
 
         // SEARCH
