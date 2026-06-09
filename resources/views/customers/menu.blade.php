@@ -576,7 +576,7 @@
 
                                 <!-- QTY -->
                                 <input type="number" class="qty-input" name="qty[{{ $product->id }}]"
-                                    id="qty{{ $product->id }}" value="1" min="1" readonly>
+                                    id="qty{{ $product->id }}" value="0" min="0" readonly>
 
                                 <!-- PLUS -->
                                 <button type="button" class="qty-btn plus-btn" onclick="plus({{ $product->id }})">
@@ -709,6 +709,12 @@
 
                                 </div>
 
+                                <div>
+                                    <button type="button" onclick="removeFromCart({{ $product->id }})" style="background:none;border:none;color:#fff;font-weight:bold;font-size:1.25rem;cursor:pointer;">
+                                        ×
+                                    </button>
+                                </div>
+
                                 <div class="cart-item-price">
                                     Rp ${(q * p).toLocaleString('id-ID')}
                                 </div>
@@ -758,6 +764,26 @@
         function toggleCartPopup() {
             let popup = document.getElementById('cartPopup');
             popup.classList.toggle('visible');
+        }
+
+        function removeFromCart(id) {
+            let input = document.getElementById('qty' + id);
+            if (!input) {
+                return;
+            }
+
+            input.value = 0;
+            let qtyBox = document.getElementById('qtyBox' + id);
+            if (qtyBox) {
+                qtyBox.classList.remove('visible');
+            }
+
+            let addBtn = document.getElementById('addBtn' + id);
+            if (addBtn) {
+                addBtn.style.display = 'block';
+            }
+
+            updateCart();
         }
 
         // SEARCH

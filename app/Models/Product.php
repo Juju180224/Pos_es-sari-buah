@@ -75,6 +75,6 @@ class Product extends Model
             return $this->image;
         }
 
-        return asset('products/' . $this->image);
+        return asset('storage/' . $this->image);
     }
 }

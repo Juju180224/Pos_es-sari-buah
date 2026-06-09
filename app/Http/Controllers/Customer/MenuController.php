@@ -102,49 +102,62 @@ class MenuController extends Controller
         ]);
     }
 
-    public function checkout()
+    public function checkout(Request $request)
     {
-        $cart = Session::get('cart', []);
+        $quantities = $request->input('qty', []);
 
-        if (empty($cart)) {
+        $items = [];
+        foreach ($quantities as $productId => $qty) {
+            $qty = (int) $qty;
+            if ($qty <= 0) {
+                continue;
+            }
+
+            $product = Product::find($productId);
+            if (!$product) {
+                continue;
+            }
+
+            $items[] = [
+                'product' => $product,
+                'qty'     => $qty,
+            ];
+        }
+
+        if (empty($items)) {
             return Redirect::back()->with('error', 'Keranjang kosong');
         }
 
         DB::beginTransaction();
 
         try {
-
             $order = Order::create([
                 'customer_id' => null,
                 'user_id'     => null,
                 'status'      => 'pending',
             ]);
 
-            foreach ($cart as $productId => $item) {
-
-                $product = Product::find($productId);
-
-                if (!$product) continue;
+            foreach ($items as $item) {
+                $product = $item['product'];
+                $qty = $item['qty'];
 
                 OrderItem::create([
                     'order_id'   => $order->id,
-                    'product_id' => $productId,
-                    'price'      => $item['price'],   // ✔ harga satuan
-                    'quantity'   => $item['qty'],
+                    'product_id' => $product->id,
+                    'price'      => $product->price,
+                    'quantity'   => $qty,
                 ]);
 
-                // ✔ stock update
-                $product->decrement('quantity', $item['qty']);
+                $product->decrement('quantity', $qty);
             }
 
             DB::commit();
 
             Session::forget('cart');
 
-            return redirect('/menu')
+            return redirect()->route('orders.index')
                 ->with('success', 'Pesanan berhasil dikirim');
         } catch (\Throwable $e) {
-
             DB::rollBack();
 
             return back()->with('error', $e->getMessage());

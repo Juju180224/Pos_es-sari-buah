@@ -41,7 +41,8 @@ class ProductController extends Controller
 
             $imageName = time() . '_' . $image->getClientOriginalName();
 
-            $image->move(public_path('products'), $imageName);
+            $path = $image->storeAs('products', $imageName, 'public');
+            $productData['image'] = $path;
 
             $productData['image'] = $imageName;
         }
@@ -73,7 +74,8 @@ class ProductController extends Controller
 
             $imageName = time() . '_' . $image->getClientOriginalName();
 
-            $image->move(public_path('products'), $imageName);
+            $path = $image->storeAs('products', $imageName, 'public');
+            $productData['image'] = $path;
 
             $productData['image'] = $imageName;
         }
