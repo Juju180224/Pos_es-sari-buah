@@ -62,6 +62,29 @@ class Product extends Model
             ->orderBy('quantity', 'desc');
     }
 
+    public function getImagePathAttribute()
+    {
+        if (empty($this->image)) {
+            return null;
+        }
+
+        $path = ltrim($this->image, '/');
+
+        if (str_starts_with($path, 'storage/')) {
+            $path = ltrim(substr($path, strlen('storage/')), '/');
+        }
+
+        if (str_starts_with($path, 'public/')) {
+            $path = ltrim(substr($path, strlen('public/')), '/');
+        }
+
+        if (!str_contains($path, '/')) {
+            $path = 'products/' . $path;
+        }
+
+        return $path;
+    }
+
     public function getImageUrlAttribute()
     {
         if (empty($this->image)) {
@@ -75,6 +98,16 @@ class Product extends Model
             return $this->image;
         }
 
-        return asset('storage/' . $this->image);
+        $path = ltrim($this->image, '/');
+
+        if (str_starts_with($path, 'storage/')) {
+            return asset($path);
+        }
+
+        if (!str_contains($path, '/')) {
+            $path = 'products/' . $path;
+        }
+
+        return asset('storage/' . $path);
     }
 }

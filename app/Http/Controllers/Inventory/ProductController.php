@@ -11,6 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -43,8 +44,6 @@ class ProductController extends Controller
 
             $path = $image->storeAs('products', $imageName, 'public');
             $productData['image'] = $path;
-
-            $productData['image'] = $imageName;
         }
 
         Product::create($productData);
@@ -65,9 +64,8 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
 
-            if ($product->image && file_exists(public_path('products/' . $product->image))) {
-
-                unlink(public_path('products/' . $product->image));
+            if ($product->image_path && Storage::disk('public')->exists($product->image_path)) {
+                Storage::disk('public')->delete($product->image_path);
             }
 
             $image = $request->file('image');
@@ -76,8 +74,6 @@ class ProductController extends Controller
 
             $path = $image->storeAs('products', $imageName, 'public');
             $productData['image'] = $path;
-
-            $productData['image'] = $imageName;
         }
 
         $product->update($productData);
@@ -89,9 +85,8 @@ class ProductController extends Controller
 
     public function destroy(Product $product): JsonResponse
     {
-        if ($product->image && file_exists(public_path('products/' . $product->image))) {
-
-            unlink(public_path('products/' . $product->image));
+        if ($product->image_path && Storage::disk('public')->exists($product->image_path)) {
+            Storage::disk('public')->delete($product->image_path);
         }
 
         $product->delete();

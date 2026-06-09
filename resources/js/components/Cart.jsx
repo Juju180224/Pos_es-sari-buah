@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { sum } from "lodash";
 
 class Cart extends Component {
+
     constructor(props) {
         super(props);
         this.state = {

@@ -32,8 +32,8 @@
                             <td>{{ $product->id }}</td>
                             <td>{{ $product->name }}</td>
                             <td>
-                                <img class="product-img" src="{{ asset('products/' . $product->image) }}"
-                                    alt="{{ $product->name }}" width="80">
+                                <img class="product-img" src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                                    width="80">
                             </td>
                             <td>{{ $product->barcode }}</td>
                             <td>{{ $product->price }}</td>
