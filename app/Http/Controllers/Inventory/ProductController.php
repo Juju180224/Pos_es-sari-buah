@@ -11,7 +11,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -34,23 +33,21 @@ class ProductController extends Controller
 
     public function store(ProductStoreRequest $request): RedirectResponse
     {
-        $productData = $request->validated();
+        $data = $request->validated();
 
         if ($request->hasFile('image')) {
-
             $image = $request->file('image');
-
             $imageName = time() . '_' . $image->getClientOriginalName();
 
             $path = $image->storeAs('products', $imageName, 'public');
-            $productData['image'] = $path;
+
+            $data['image'] = $path;
         }
 
-        Product::create($productData);
+        Product::create($data);
 
-        return redirect()
-            ->route('products.index')
-            ->with('success', __('product.success_creating'));
+        return redirect()->route('products.index')
+            ->with('success', 'Product created');
     }
 
     public function edit(Product $product): View|Factory
@@ -58,35 +55,36 @@ class ProductController extends Controller
         return view('products.edit', compact('product'));
     }
 
-    public function update(ProductUpdateRequest $request, Product $product): RedirectResponse
+    public function update(ProductUpdateRequest $request, Product $product)
     {
-        $productData = $request->validated();
+        $data = $request->validated();
 
         if ($request->hasFile('image')) {
 
-            if ($product->image_path && Storage::disk('public')->exists($product->image_path)) {
-                Storage::disk('public')->delete($product->image_path);
+            
+            if ($product->image && \Storage::disk('public')->exists($product->image)) {
+                \Storage::disk('public')->delete($product->image);
             }
 
             $image = $request->file('image');
-
             $imageName = time() . '_' . $image->getClientOriginalName();
 
             $path = $image->storeAs('products', $imageName, 'public');
-            $productData['image'] = $path;
+
+            $data['image'] = $path;
         }
 
-        $product->update($productData);
+        $product->update($data);
 
-        return redirect()
-            ->route('products.index')
-            ->with('success', __('product.success_updating'));
+        return redirect()->route('products.index')
+            ->with('success', 'Product updated');
     }
 
     public function destroy(Product $product): JsonResponse
     {
-        if ($product->image_path && Storage::disk('public')->exists($product->image_path)) {
-            Storage::disk('public')->delete($product->image_path);
+
+        if ($product->image && file_exists(public_path('images/' . $product->image))) {
+            unlink(public_path('images/' . $product->image));
         }
 
         $product->delete();

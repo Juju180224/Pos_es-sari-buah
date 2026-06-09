@@ -527,9 +527,7 @@
                         <!-- IMAGE -->
                         <div class="card-img-wrap">
 
-                            <img src="{{ $product->image
-                                ? asset('storage/' . $product->image)
-                                : 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80' }}"
+                            <img src="{{ $product->image ? asset('images/' . $product->image) : asset('images/img-placeholder.jpg') }}"
                                 alt="{{ $product->name }}">
 
                         </div>

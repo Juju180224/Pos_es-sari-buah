@@ -32,7 +32,8 @@
                             <td>{{ $product->id }}</td>
                             <td>{{ $product->name }}</td>
                             <td>
-                                <img class="product-img" src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                                <img class="product-img"
+                                    src="{{ $product->image ? asset('images/' . $product->image) : asset('images/img-placeholder.jpg') }}"
                                     width="80">
                             </td>
                             <td>{{ $product->barcode }}</td>
