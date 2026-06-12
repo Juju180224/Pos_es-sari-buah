@@ -172,10 +172,10 @@ class MenuController extends Controller
 
             DB::commit();
 
-            // 🔥 CLEAR CART (IMPORTANT)
             Session::forget('cart');
 
-            return redirect()->route('orders.index')
+            return redirect()
+                ->route('menu')
                 ->with('success', 'Pesanan berhasil dikirim');
         } catch (\Throwable $e) {
 
