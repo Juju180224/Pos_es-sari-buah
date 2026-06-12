@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('smart_alternatif', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('smart_alternatif', function (Blueprint $table) {
+            $table->string('nama_es')->nullable();
         });
     }
 

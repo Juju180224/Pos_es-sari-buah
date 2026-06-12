@@ -289,9 +289,8 @@
                                         <td>{{ $product->name }}</td>
 
                                         <td>
-                                            <img class="product-img" src="{{  }}"
-                                                width="50">
-                                        </td>
+    <img class="product-img" src="{{ asset('images/' . $product->image) }}" width="50">
+</td>
 
                                         <td>{{ $product->barcode }}</td>
 

@@ -6,56 +6,35 @@ use Illuminate\Support\Facades\DB;
 
 class SmartController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | DATA KRITERIA
-    |--------------------------------------------------------------------------
-    */
-
     public function kriteria()
     {
         $kriteria = DB::table('smart_kriteria')->get();
-
         return view('smart.kriteria', compact('kriteria'));
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | DATA ALTERNATIF
-    |--------------------------------------------------------------------------
-    */
 
     public function alternatif()
     {
         $alternatif = DB::table('smart_alternatif')->get();
-
         return view('smart.alternatif', compact('alternatif'));
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | PENILAIAN
-    |--------------------------------------------------------------------------
-    */
 
     public function penilaian()
     {
         $penilaian = DB::table('smart_penilaian')
-            ->join('smart_alternatif', 'smart_penilaian.id_alternatif', '=', 'smart_alternatif.id_alternatif')
+            ->join(
+                'smart_alternatif',
+                'smart_penilaian.id_alternatif',
+                '=',
+                'smart_alternatif.id'
+            )
             ->select(
                 'smart_penilaian.*',
-                'smart_alternatif.nama_es'
+                'smart_alternatif.nama as nama_es'
             )
             ->get();
 
         return view('smart.penilaian', compact('penilaian'));
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | PROSES SMART
-    |--------------------------------------------------------------------------
-    */
 
     public function proses()
     {
@@ -63,75 +42,32 @@ class SmartController extends Controller
         $alternatif = DB::table('smart_alternatif')->get();
         $penilaian = DB::table('smart_penilaian')->get();
 
-        return view('smart.proses', compact(
-            'kriteria',
-            'alternatif',
-            'penilaian'
-        ));
+        return view('smart.proses', compact('kriteria', 'alternatif', 'penilaian'));
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | HASIL SMART
-    |--------------------------------------------------------------------------
-    */
 
     public function hasil()
     {
-        /*
-        |--------------------------------------------------------------------------
-        | AMBIL DATA KRITERIA
-        |--------------------------------------------------------------------------
-        */
-
         $kriteria = DB::table('smart_kriteria')->get();
-
-        /*
-        |--------------------------------------------------------------------------
-        | TOTAL BOBOT
-        |--------------------------------------------------------------------------
-        */
-
         $totalBobot = $kriteria->sum('bobot');
-
-        /*
-        |--------------------------------------------------------------------------
-        | NORMALISASI BOBOT
-        |--------------------------------------------------------------------------
-        */
 
         $normalisasi = [];
 
         foreach ($kriteria as $item) {
-
-            $normalisasi[$item->kode_kriteria] =
-                $item->bobot / $totalBobot;
+            $normalisasi[$item->kode_kriteria] = $item->bobot / $totalBobot;
         }
-
-        /*
-        |--------------------------------------------------------------------------
-        | AMBIL DATA PENILAIAN
-        |--------------------------------------------------------------------------
-        */
 
         $penilaian = DB::table('smart_penilaian')
             ->join(
                 'smart_alternatif',
                 'smart_penilaian.id_alternatif',
                 '=',
-                'smart_alternatif.id_alternatif'
+                'smart_alternatif.id'
             )
             ->select(
                 'smart_penilaian.*',
-                'smart_alternatif.nama_es'
+                'smart_alternatif.nama as nama_es'
             )
             ->get();
-
-        /*
-        |--------------------------------------------------------------------------
-        | HITUNG NILAI AKHIR SMART
-        |--------------------------------------------------------------------------
-        */
 
         $hasil = [];
 
@@ -150,32 +86,18 @@ class SmartController extends Controller
             ];
         }
 
-        /*
-        |--------------------------------------------------------------------------
-        | SORTING RANKING
-        |--------------------------------------------------------------------------
-        */
-
-        usort($hasil, function ($a, $b) {
-            return $b['nilai_akhir'] <=> $a['nilai_akhir'];
-        });
-
-        /*
-        |--------------------------------------------------------------------------
-        | SIMPAN KE DATABASE
-        |--------------------------------------------------------------------------
-        */
+        usort($hasil, fn($a, $b) => $b['nilai_akhir'] <=> $a['nilai_akhir']);
 
         DB::table('smart_hasil')->truncate();
 
         foreach ($hasil as $index => $item) {
 
             $alternatif = DB::table('smart_alternatif')
-                ->where('nama_es', $item['nama_es'])
+                ->where('nama', $item['nama_es'])
                 ->first();
 
             DB::table('smart_hasil')->insert([
-                'id_alternatif' => $alternatif->id_alternatif,
+                'id_alternatif' => $alternatif->id,
                 'nilai_akhir' => $item['nilai_akhir'],
                 'ranking' => $index + 1,
             ]);
