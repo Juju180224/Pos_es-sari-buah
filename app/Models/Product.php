@@ -91,11 +91,12 @@ class Product extends Model
             return asset('images/img-placeholder.jpg');
         }
 
+        $filename = basename($this->image);
 
-        if (str_starts_with($this->image, 'http')) {
-            return $this->image;
-        }
+        $filename = preg_replace('/^\d+_/', '', $filename);
 
-        return asset('storage/' . $this->image);
+        $filename = strtolower($filename);
+
+        return asset('images/' . $filename);
     }
 }

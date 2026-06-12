@@ -180,3 +180,1251 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2026-06-09 20:30:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 20:40:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 20:50:32] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 21:00:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 21:10:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 21:20:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 21:30:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 21:40:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 21:50:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-09 22:00:31] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 10:02:48] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 10:12:12] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 10:22:11] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 10:32:13] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 10:42:11] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 10:52:14] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 11:02:11] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:04:59] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:06:47] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:16:22] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:26:22] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:36:22] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:46:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 12:56:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 13:06:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 13:16:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 13:26:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 13:36:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 13:46:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 13:56:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 14:06:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 14:16:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 14:26:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 14:36:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 14:46:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 14:56:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 15:06:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 15:16:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 15:26:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 15:36:24] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 15:46:23] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-10 15:56:25] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-12 08:31:57] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-12 08:33:14] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-12 08:43:13] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-12 08:53:12] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-12 09:03:15] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-12 09:13:18] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:75
+Stack trace:
+#0 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(97): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php', true)
+#1 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(1154): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(972): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1078): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Container\Container.php(903): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1058): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\laragon\www\Pos_es-sari-buah\Pos_es-sari-buah\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(138): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75
+Stack trace:
+#0 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php', true)
+#1 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(1154): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(972): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1078): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(903): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1058): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(138): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\laragon\\www\\Pos_es-sari-buah\\Pos_es-sari-buah\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:75)
+[stacktrace]
+#0 {main}
+"} 
