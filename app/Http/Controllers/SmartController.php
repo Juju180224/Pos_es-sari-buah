@@ -29,13 +29,12 @@ class SmartController extends Controller
             )
             ->select(
                 'smart_penilaian.*',
-                'smart_alternatif.nama_es'
+                'smart_alternatif.nama_es as nama_es'
             )
             ->get();
 
         return view('smart.penilaian', compact('penilaian'));
     }
-
     public function proses()
     {
         $kriteria = DB::table('smart_kriteria')->get();

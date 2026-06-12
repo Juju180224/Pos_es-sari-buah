@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('smart_alternatif', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_es');
             $table->timestamps();
         });
     }
