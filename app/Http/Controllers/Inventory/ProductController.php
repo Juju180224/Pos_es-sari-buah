@@ -39,9 +39,9 @@ class ProductController extends Controller
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
 
-            $path = $image->storeAs('products', $imageName, 'public');
+            $image->move(public_path('images'), $imageName);
 
-            $data['image'] = $path;
+            $data['image'] = $imageName;
         }
 
         Product::create($data);
@@ -61,7 +61,7 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
 
-            
+
             if ($product->image && \Storage::disk('public')->exists($product->image)) {
                 \Storage::disk('public')->delete($product->image);
             }

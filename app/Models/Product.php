@@ -93,10 +93,6 @@ class Product extends Model
 
         $filename = basename($this->image);
 
-        $filename = preg_replace('/^\d+_/', '', $filename);
-
-        $filename = strtolower($filename);
-
         return asset('images/' . $filename);
     }
 }
