@@ -48,13 +48,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="kode_produk">{{ __('product.Barcode') }}</label>
+                    <label for="barcode">{{ __('product.Barcode') }}</label>
 
                     <input type="text" name="barcode" id="barcode"
-                        class="form-control @error('kode_produk') is-invalid @enderror" placeholder="Kode Produk"
-                        value="{{ old('kode_produk') }}">
+                        class="form-control @error('barcode') is-invalid @enderror" placeholder="Kode Produk"
+                        value="{{ old('barcode') }}">
 
-                    @error('kode_produk')
+                    @error('barcode')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
