@@ -454,6 +454,28 @@
 
 <body>
 
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelectorAll('.qty-input').forEach(input => {
+                    input.value = 0;
+                });
+
+                document.querySelectorAll('.qty-box').forEach(box => {
+                    box.classList.remove('visible');
+                });
+
+                document.querySelectorAll('.add-btn').forEach(btn => {
+                    btn.style.display = 'block';
+                });
+
+                updateCart();
+
+            });
+        </script>
+    @endif
+
     <!-- HEADER -->
     <div class="header">
 
@@ -513,7 +535,6 @@
 
     <!-- FORM -->
     <form action="{{ route('menu.checkout') }}" method="POST">
-
         @csrf
 
         <div class="container">
@@ -527,7 +548,7 @@
                         <!-- IMAGE -->
                         <div class="card-img-wrap">
 
-                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
 
                         </div>
 
@@ -575,7 +596,7 @@
 
                                 <!-- QTY -->
                                 <input type="number" class="qty-input" name="qty[{{ $product->id }}]"
-                                    id="qty{{ $product->id }}" value="1" min="1" readonly>
+                                    id="qty{{ $product->id }}" value="0" min="0" readonly>
 
                                 <!-- PLUS -->
                                 <button type="button" class="qty-btn plus-btn" onclick="plus({{ $product->id }})">
@@ -608,7 +629,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="order-btn">
+            <button type="button" class="order-btn" onclick="submitOrder()">
                 Pesan Sekarang →
             </button>
 
@@ -617,7 +638,27 @@
     </form>
 
     <script>
-        // TAMBAH
+        @if (session('success'))
+            <
+            script >
+                document.addEventListener('DOMContentLoaded', function() {
+
+                    document.querySelectorAll('.qty-input').forEach(input => {
+                        input.value = 0;
+                    });
+
+                    document.querySelectorAll('.qty-box').forEach(box => {
+                        box.classList.remove('visible');
+                    });
+
+                    document.querySelectorAll('.add-btn').forEach(btn => {
+                        btn.style.display = 'block';
+                    });
+
+                }); <
+            />
+        @endif
+
         function plus(id) {
 
             let input = document.getElementById('qty' + id);
@@ -673,7 +714,6 @@
             let cartHTML = '';
 
             @foreach ($products as $product)
-
                 let el{{ $product->id }} =
                     document.getElementById('qty{{ $product->id }}');
 
@@ -694,26 +734,26 @@
                     if (q > 0) {
 
                         cartHTML += `
-                            <div class="cart-item">
+        <div class="cart-item">
 
-                                <div>
+            <div>
 
-                                    <div class="cart-item-name">
-                                        {{ $product->name }}
-                                    </div>
+                <div class="cart-item-name">
+                    {{ $product->name }}
+                </div>
 
-                                    <div class="cart-item-qty">
-                                        Qty: ${q}
-                                    </div>
+                <div class="cart-item-qty">
+                    Qty: ${q}
+                </div>
 
-                                </div>
+            </div>
 
-                                <div class="cart-item-price">
-                                    Rp ${(q * p).toLocaleString('id-ID')}
-                                </div>
+            <div class="cart-item-price">
+                Rp ${(q * p).toLocaleString('id-ID')}
+            </div>
 
-                            </div>
-                        `;
+        </div>
+        `;
                     }
                 }
             @endforeach
@@ -810,6 +850,21 @@
                 top: document.body.scrollHeight,
                 behavior: 'smooth'
             });
+        }
+
+        function submitOrder() {
+
+            let totalItem = 0;
+
+            document.querySelectorAll('.qty-input').forEach(input => {
+                totalItem += parseInt(input.value) || 0;
+            });
+
+            if (totalItem <= 0) {
+                alert('Silakan pilih minimal 1 produk');
+                return;
+            }
+            document.querySelector('form').submit();
         }
     </script>
 

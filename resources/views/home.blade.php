@@ -218,7 +218,7 @@
                                         <td>{{ $product->name }}</td>
 
                                         <td>
-                                            <img class="product-img" src="{{ Storage::url($product->image) }}"
+                                            <img class="product-img" src="{{ $product->image_url) }}"
                                                 width="50">
                                         </td>
 
@@ -289,7 +289,7 @@
                                         <td>{{ $product->name }}</td>
 
                                         <td>
-                                            <img class="product-img" src="{{ Storage::url($product->image) }}"
+                                            <img class="product-img" src="{{  }}"
                                                 width="50">
                                         </td>
 

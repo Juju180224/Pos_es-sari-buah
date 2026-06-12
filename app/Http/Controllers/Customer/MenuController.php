@@ -176,7 +176,7 @@ class MenuController extends Controller
 
             return redirect()
                 ->route('menu')
-                ->with('success', 'Pesanan berhasil dikirim');
+                ->with('success', true);
         } catch (\Throwable $e) {
 
             DB::rollBack();
