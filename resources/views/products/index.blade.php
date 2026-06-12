@@ -33,6 +33,8 @@
                             <td>{{ $product->name }}</td>
                             <td>
                                 <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
+                                <br>
+                                {{ $product->image_url }}
                             </td>
                             <td>{{ $product->barcode }}</td>
                             <td>{{ $product->price }}</td>
