@@ -527,8 +527,7 @@
                         <!-- IMAGE -->
                         <div class="card-img-wrap">
 
-                            <img src="{{ $product->image ? asset('images/' . $product->image) : asset('images/img-placeholder.jpg') }}"
-                                alt="{{ $product->name }}">
+                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
 
                         </div>
 
