@@ -29,7 +29,7 @@ class SmartController extends Controller
             )
             ->select(
                 'smart_penilaian.*',
-                'smart_alternatif.nama as nama_es'
+                'smart_alternatif.nama_es'
             )
             ->get();
 
@@ -65,7 +65,7 @@ class SmartController extends Controller
             )
             ->select(
                 'smart_penilaian.*',
-                'smart_alternatif.nama as nama_es'
+                'smart_alternatif.nama_es as nama_es'
             )
             ->get();
 
@@ -93,8 +93,11 @@ class SmartController extends Controller
         foreach ($hasil as $index => $item) {
 
             $alternatif = DB::table('smart_alternatif')
-                ->where('nama', $item['nama_es'])
+                ->where('nama_es', $item['nama_es'])
                 ->first();
+            if (!$alternatif) {
+                continue;
+            }
 
             DB::table('smart_hasil')->insert([
                 'id_alternatif' => $alternatif->id,
