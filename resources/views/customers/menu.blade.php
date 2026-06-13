@@ -546,6 +546,7 @@
                         data-category="{{ $product->category->slug ?? 'all' }}">
 
                         <!-- IMAGE -->
+                        <!-- fix railway cache -->
                         <div class="card-img-wrap">
                             <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
                                 style="
