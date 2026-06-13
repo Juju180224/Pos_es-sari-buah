@@ -547,14 +547,25 @@
 
                         <!-- IMAGE -->
                         <!-- fix railway cache -->
-                        <div class="card-img-wrap">
+                        <div class="card-img-wrap"
+                            style="
+        width:100%;
+        height:220px;
+        overflow:hidden;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#f5f5f5;
+        border-radius:12px;
+    ">
+
                             <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
                                 style="
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 8px;
+            width:100%;
+            height:100%;
+            object-fit:cover;
         ">
+
                         </div>
 
                         <!-- BODY -->
