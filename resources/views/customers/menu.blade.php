@@ -548,7 +548,11 @@
                         <!-- IMAGE -->
                         <div class="card-img-wrap">
 
-                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}" width="120">
+
+                            <br>
+
+                            {{ $product->image_url }}
 
                         </div>
 
