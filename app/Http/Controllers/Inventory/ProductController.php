@@ -11,6 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -39,15 +40,16 @@ class ProductController extends Controller
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
 
-            $image->move(public_path('images'), $imageName);
+            $path = $image->storeAs('products', $imageName, 'public');
 
-            $data['image'] = $imageName;
+            $data['image'] = $path;
         }
 
         Product::create($data);
 
-        return redirect()->route('products.index')
-            ->with('success', 'Product created');
+        return redirect()
+            ->route('products.index')
+            ->with('success', 'Product created successfully');
     }
 
     public function edit(Product $product): View|Factory
@@ -55,15 +57,15 @@ class ProductController extends Controller
         return view('products.edit', compact('product'));
     }
 
-    public function update(ProductUpdateRequest $request, Product $product)
+    public function update(ProductUpdateRequest $request, Product $product): RedirectResponse
     {
         $data = $request->validated();
 
         if ($request->hasFile('image')) {
 
-
-            if ($product->image && \Storage::disk('public')->exists($product->image)) {
-                \Storage::disk('public')->delete($product->image);
+            // hapus image lama jika ada
+            if ($product->image && Storage::disk('public')->exists($product->image)) {
+                Storage::disk('public')->delete($product->image);
             }
 
             $image = $request->file('image');
@@ -76,19 +78,22 @@ class ProductController extends Controller
 
         $product->update($data);
 
-        return redirect()->route('products.index')
-            ->with('success', 'Product updated');
+        return redirect()
+            ->route('products.index')
+            ->with('success', 'Product updated successfully');
     }
 
     public function destroy(Product $product): JsonResponse
     {
-
-        if ($product->image && file_exists(public_path('images/' . $product->image))) {
-            unlink(public_path('images/' . $product->image));
+        if ($product->image && Storage::disk('public')->exists($product->image)) {
+            Storage::disk('public')->delete($product->image);
         }
 
         $product->delete();
 
-        return response()->json(['success' => true]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Product deleted successfully'
+        ]);
     }
 }
