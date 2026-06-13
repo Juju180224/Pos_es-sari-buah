@@ -65,24 +65,10 @@ class Product extends Model
     public function getImagePathAttribute()
     {
         if (empty($this->image)) {
-            return null;
+            return 'images/img-placeholder.jpg';
         }
 
-        $path = ltrim($this->image, '/');
-
-        if (str_starts_with($path, 'storage/')) {
-            $path = ltrim(substr($path, strlen('storage/')), '/');
-        }
-
-        if (str_starts_with($path, 'public/')) {
-            $path = ltrim(substr($path, strlen('public/')), '/');
-        }
-
-        if (!str_contains($path, '/')) {
-            $path = 'products/' . $path;
-        }
-
-        return $path;
+        return 'images/' . basename($this->image);
     }
 
     public function getImageUrlAttribute()
