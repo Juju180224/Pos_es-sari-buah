@@ -1,0 +1,1 @@
+web: php artisan optimize:clear && heroku-php-apache2 public/
