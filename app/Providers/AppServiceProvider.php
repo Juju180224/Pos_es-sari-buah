@@ -31,20 +31,24 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         if (! $this->app->runningInConsole()) {
+            try {
+                if (Schema::hasTable('settings')) {
 
-            if (Schema::hasTable('settings')) {
+                    $settings = Setting::query()
+                        ->select('key', 'value')
+                        ->get()
+                        ->pluck('value', 'key')
+                        ->toArray();
 
-                $settings = Setting::query()
-                    ->select('key', 'value')
-                    ->get()
-                    ->pluck('value', 'key')
-                    ->toArray();
+                    config(['settings' => $settings]);
 
-                config(['settings' => $settings]);
-
-                if (!empty($settings['app_name'])) {
-                    config(['app.name' => $settings['app_name']]);
+                    if (!empty($settings['app_name'])) {
+                        config(['app.name' => $settings['app_name']]);
+                    }
                 }
+            } catch (\Exception $e) {
+                // Database not available during bootstrap
+                // Continue with default config
             }
         }
 

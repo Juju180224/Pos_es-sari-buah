@@ -14,16 +14,29 @@ use App\Http\Controllers\Pos\CartController;
 use App\Http\Controllers\Pos\OrderController;
 use App\Http\Controllers\Settings\SettingController;
 use App\Http\Controllers\SmartController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
-| ROOT
+| ROOT & LANDING
 |--------------------------------------------------------------------------
 */
 
 Route::get('/', function () {
-    return redirect()->route('home');
+    return redirect()->route('landing');
 });
+
+Route::get('/home', [PagesController::class, 'home'])->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| STATIC PAGES (BARU DITAMBAHKAN)
+|--------------------------------------------------------------------------
+*/
+
+Route::view('/about', 'pages.about')->name('about');
+Route::view('/shop', 'pages.shop')->name('shop');
+Route::view('/contact', 'pages.contact')->name('contact');
 
 /*
 |--------------------------------------------------------------------------
@@ -39,18 +52,17 @@ Auth::routes();
 |--------------------------------------------------------------------------
 */
 
-
 Route::prefix('menu')->group(function () {
 
     Route::get('/', [MenuController::class, 'index'])->name('menu');
 
     Route::post('/cart/add', [MenuController::class, 'addToCart']);
     Route::post('/cart/remove', [MenuController::class, 'removeFromCart']);
-
     Route::get('/cart', [MenuController::class, 'getCart']);
 
     Route::post('/checkout', [MenuController::class, 'checkout'])
         ->name('menu.checkout');
+
     Route::get('/clear-cart', [MenuController::class, 'clearCart']);
 });
 
@@ -67,7 +79,7 @@ Route::prefix('admin')
         /*
         | DASHBOARD
         */
-        Route::get('/', HomeController::class)->name('home');
+        Route::get('/', HomeController::class)->name('admin.home');
 
         /*
         | SETTINGS
@@ -87,7 +99,7 @@ Route::prefix('admin')
         Route::resource('suppliers', SupplierController::class);
 
         /*
-        | ORDER LATEST (SIMPLIFIED)
+        | ORDER LATEST
         */
         Route::get('/orders/latest', function () {
             return \App\Models\Order::with('items.product')
@@ -132,7 +144,7 @@ Route::prefix('admin')
             });
 
         /*
-        | EXTRA ORDER PAYMENT
+        | EXTRA PAYMENT
         */
         Route::post('/orders/partial-payment', [OrderController::class, 'partialPayment'])
             ->name('orders.partial-payment');
@@ -140,8 +152,8 @@ Route::prefix('admin')
         /*
         | TRANSLATION
         */
-        Route::get('/locale/{type}', function ($type) {
-            return response()->json(trans($type));
+        Route::get('/locale/{type}', function () {
+            return response()->json(trans(request()->type));
         });
 
         /*
