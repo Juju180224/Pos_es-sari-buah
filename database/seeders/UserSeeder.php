@@ -17,8 +17,19 @@ class UserSeeder extends Seeder
         ], [
             'first_name' => 'Admin',
             'last_name' => 'admin',
-            'email'=>'admin@gmail.com',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('admin123')
         ]);
+        User::updateOrCreate(
+            [
+                'email' => 'ahmad@gmail.com'
+            ],
+            [
+                'first_name' => 'Ahmad',
+                'last_name' => 'User',
+                'email' => 'ahmad@gmail.com',
+                'password' => bcrypt('ahmad12345')
+            ]
+        );
     }
 }
