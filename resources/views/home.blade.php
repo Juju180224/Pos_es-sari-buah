@@ -272,13 +272,17 @@
     <script>
         const ctx = document.getElementById('salesChart');
 
+        @php
+            $chartDays = $days ?? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            $chartSales = $sales_week ?? [0, 0, 0, 0, 0, 0, 0];
+        @endphp
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: @json($days ?? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']),
+                labels: @json($chartDays),
                 datasets: [{
                     label: 'Sales',
-                    data: @json($sales_week ?? [0, 0, 0, 0, 0, 0, 0]),
+                    data: @json($chartSales),
                     borderWidth: 1
                 }]
             },
