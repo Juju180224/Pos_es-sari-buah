@@ -50,6 +50,8 @@ return [
     'Remaining'         => 'Sisa',
     'Submit_Payment'    => 'Kirim Pembayaran',
     'Change'            => 'Kembalian',
+    'Payment_Method'    => 'Metode Pembayaran',
+    'Pay_Full'          => 'Bayar Lunas',
 
     //==========================================
     // Invoice

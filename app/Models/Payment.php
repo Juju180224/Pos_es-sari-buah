@@ -33,6 +33,7 @@ class Payment extends Model
         'amount',
         'order_id',
         'user_id',
+        'payment_method',
     ];
 
     protected $casts = [

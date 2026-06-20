@@ -131,12 +131,26 @@
                     <h5 class="modal-title">{{ __('order.Pay_Partial') }}</h5>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
                 <form method="POST" action="{{ route('orders.partial-payment') }}">
                     @csrf
 
                     <div class="modal-body">
                         <input type="hidden" name="order_id" id="modalOrderId">
+
+                        <div class="form-group">
+                            <label>{{ __('order.Payment_Method') }}</label>
+                            <select class="form-control" name="payment_method" id="paymentMethod" required>
+                                <option value="cash">Cash</option>
+                                <option value="qris">QRIS</option>
+                                <option value="transfer_bca">Transfer BCA</option>
+                                <option value="transfer_bni">Transfer BNI</option>
+                                <option value="transfer_mandiri">Transfer Mandiri</option>
+                                <option value="transfer_bri">Transfer BRI</option>
+                                <option value="ovo">OVO</option>
+                                <option value="gopay">GoPay</option>
+                                <option value="dana">DANA</option>
+                            </select>
+                        </div>
 
                         <div class="form-group">
                             <label>{{ __('order.Enter_Amount') }}</label>
@@ -151,8 +165,11 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             {{ __('common.Cancel') }}
+                        </button>
+                        <button type="button" class="btn btn-success" id="btnPayFull">
+                            {{ __('order.Pay_Full') }}
                         </button>
                         <button class="btn btn-primary">
                             {{ __('order.Submit_Payment') }}
@@ -277,6 +294,12 @@
                 $('#partialAmount').attr('max', remaining);
             });
 
+        });
+
+        $(document).on('click', '#btnPayFull', function() {
+            let remaining = $('#partialAmount').attr('max');
+            $('#partialAmount').val(remaining);
+            $('#partialAmount').closest('form').submit();
         });
     </script>
 @endsection

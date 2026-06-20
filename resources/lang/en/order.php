@@ -50,6 +50,8 @@ return [
     'Remaining'         => 'Remaining',
     'Submit_Payment'    => 'Submit Payment',
     'Change'            => 'Change',
+    'Payment_Method'    => 'Payment Method',
+    'Pay_Full'          => 'Pay Full Amount',
 
     //==========================================
     // Invoice
