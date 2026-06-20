@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 
 class MenuController extends Controller
 {
@@ -149,8 +151,10 @@ class MenuController extends Controller
 
         try {
 
+            $randomCustomerId = Customer::inRandomOrder()->value('id');
+
             $order = Order::create([
-                'customer_id' => null,
+                'customer_id' => $randomCustomerId,
                 'user_id'     => null,
                 'status'      => 'pending',
             ]);
