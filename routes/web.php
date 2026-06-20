@@ -116,17 +116,16 @@ Route::prefix('admin')
         Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
         Route::delete('/cart/delete', [CartController::class, 'delete']);
         Route::delete('/cart/empty', [CartController::class, 'empty']);
-
         /*
-        | PURCHASE
-        */
-        Route::resource('purchases', PurchaseController::class);
-
+| PURCHASE
+*/
         Route::get('/purchases/data', [PurchaseController::class, 'data'])
             ->name('purchases.data');
 
         Route::get('/purchases/{purchase}/receipt', [PurchaseController::class, 'receipt'])
             ->name('purchases.receipt');
+
+        Route::resource('purchases', PurchaseController::class);
 
         /*
         | PURCHASE CART
