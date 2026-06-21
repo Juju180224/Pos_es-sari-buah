@@ -149,6 +149,20 @@
 
                 </li>
 
+                <!-- Raw Materials -->
+<li class="nav-item">
+
+    <a href="{{ route('raw-materials.index') }}"
+        class="nav-link {{ activeSegment('raw-materials') }}">
+
+        <i class="nav-icon fas fa-boxes"></i>
+
+        <p>Bahan Baku</p>
+
+    </a>
+
+</li>
+
                 <!-- SMART ANALYSIS -->
                 <li class="nav-header">SMART ANALYSIS</li>
 
