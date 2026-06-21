@@ -26,6 +26,9 @@ class RawMaterial extends Model
         ];
     }
 
+    /**
+     * Cek apakah stok berada di bawah batas minimum.
+     */
     public function isLowStock(): bool
     {
         return $this->stock <= $this->low_stock_threshold;

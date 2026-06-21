@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Inventory;
 
 use App\Http\Controllers\Controller;
 use App\Models\RawMaterial;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class RawMaterialController extends Controller
@@ -16,14 +16,14 @@ class RawMaterialController extends Controller
     public function index(Request $request): View
     {
         $rawMaterials = RawMaterial::query()
-            ->when($request->input('search'), function ($query, $search) {
+            ->when($request->search, function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
             })
             ->orderBy('name')
             ->paginate(10)
             ->withQueryString();
 
-        return view('raw-materials.index', ['rawMaterials' => $rawMaterials]);
+        return view('raw-materials.index', compact('rawMaterials'));
     }
 
     /**
@@ -39,55 +39,66 @@ class RawMaterialController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'unit' => ['required', 'string', 'max:50'],
-            'stock' => ['required', 'numeric', 'min:0'],
-            'purchase_price' => ['required', 'numeric', 'min:0'],
-            'low_stock_threshold' => ['nullable', 'numeric', 'min:0'],
+        $validated = $request->validate([
+            'name'                => 'required|string|max:255',
+            'unit'                => 'required|string|max:50',
+            'stock'               => 'required|numeric|min:0',
+            'purchase_price'      => 'required|numeric|min:0',
+            'low_stock_threshold' => 'nullable|numeric|min:0',
         ]);
 
-        RawMaterial::create($request->all());
+        RawMaterial::create($validated);
 
-        return redirect()->route('raw-materials.index')
-            ->with('success', __('Bahan baku berhasil ditambahkan!'));
+        return redirect()
+            ->route('raw-materials.index')
+            ->with('success', 'Bahan baku berhasil ditambahkan.');
     }
 
     /**
-     * Show the form for editing the specified raw material.
+     * Display the specified resource.
+     */
+    public function show(RawMaterial $rawMaterial): View
+    {
+        return view('raw-materials.show', compact('rawMaterial'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
      */
     public function edit(RawMaterial $rawMaterial): View
     {
-        return view('raw-materials.edit', ['rawMaterial' => $rawMaterial]);
+        return view('raw-materials.edit', compact('rawMaterial'));
     }
 
     /**
-     * Update the specified raw material.
+     * Update the specified resource.
      */
     public function update(Request $request, RawMaterial $rawMaterial): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'unit' => ['required', 'string', 'max:50'],
-            'stock' => ['required', 'numeric', 'min:0'],
-            'purchase_price' => ['required', 'numeric', 'min:0'],
-            'low_stock_threshold' => ['nullable', 'numeric', 'min:0'],
+        $validated = $request->validate([
+            'name'                => 'required|string|max:255',
+            'unit'                => 'required|string|max:50',
+            'stock'               => 'required|numeric|min:0',
+            'purchase_price'      => 'required|numeric|min:0',
+            'low_stock_threshold' => 'nullable|numeric|min:0',
         ]);
 
-        $rawMaterial->update($request->all());
+        $rawMaterial->update($validated);
 
-        return redirect()->route('raw-materials.index')
-            ->with('success', __('Bahan baku berhasil diperbarui!'));
+        return redirect()
+            ->route('raw-materials.index')
+            ->with('success', 'Bahan baku berhasil diperbarui.');
     }
 
     /**
-     * Remove the specified raw material.
+     * Remove the specified resource.
      */
     public function destroy(RawMaterial $rawMaterial): RedirectResponse
     {
         $rawMaterial->delete();
 
-        return redirect()->route('raw-materials.index')
-            ->with('success', __('Bahan baku berhasil dihapus!'));
+        return redirect()
+            ->route('raw-materials.index')
+            ->with('success', 'Bahan baku berhasil dihapus.');
     }
 }
