@@ -48,8 +48,12 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->unit }}</td>
-                        <td>{{ number_format($item->stock, 2) }}</td>
-                        <td>{{ config('settings.currency_symbol') }} {{ number_format($item->purchase_price, 2) }}</td>
+                        <td>{{ number_format($item->stock, 0, ',', '.') }}</td>
+                        <td>
+    {{ config('settings.currency_symbol') }}
+    {{ number_format($item->purchase_price, 0, ',', '.') }}
+    / {{ $item->unit }}
+</td>
                         <td>
                             @if($item->isLowStock())
                                 <span class="badge badge-danger">Stok Menipis</span>
