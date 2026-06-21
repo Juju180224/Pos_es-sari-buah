@@ -1,0 +1,30 @@
+{
+    "analysisOnly": false,
+    "files": {
+        "maxSize": 1000000,
+        "exclude": [
+            "**/.git",
+            "**/.svn",
+            "**/.hg",
+            "**/CVS",
+            "**/.DS_Store",
+            "**/node_modules",
+            "**/bower_components",
+            "**/vendor/bin/**",
+            "**/vendor/**/.git",
+            "**/storage/**",
+            "**/bootstrap/cache/**"
+        ]
+    },
+    "completion": {
+        "insertUseDeclaration": true,
+        "fullyQualifyGlobalConstantsAndFunctions": false
+    },
+    "diagnostics": {
+        "enable": true,
+        "run": "onSave"
+    },
+    "references": {
+        "exclude": ["**/vendor/**"]
+    }
+}
