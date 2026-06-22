@@ -21,47 +21,21 @@
                 <table class="table table-bordered">
 
                     <thead class="text-center">
-
                         <tr>
                             <th>Kriteria</th>
                             <th>Bobot</th>
                             <th>Normalisasi</th>
                         </tr>
-
                     </thead>
 
                     <tbody class="text-center">
-
-                        <tr>
-                            <td>C1</td>
-                            <td>90</td>
-                            <td>0.21</td>
-                        </tr>
-
-                        <tr>
-                            <td>C2</td>
-                            <td>88</td>
-                            <td>0.20</td>
-                        </tr>
-
-                        <tr>
-                            <td>C3</td>
-                            <td>85</td>
-                            <td>0.20</td>
-                        </tr>
-
-                        <tr>
-                            <td>C4</td>
-                            <td>80</td>
-                            <td>0.18</td>
-                        </tr>
-
-                        <tr>
-                            <td>C5</td>
-                            <td>87</td>
-                            <td>0.20</td>
-                        </tr>
-
+                        @foreach ($kriteria as $item)
+                            <tr>
+                                <td>{{ $item->kode_kriteria }}</td>
+                                <td>{{ $item->bobot }}</td>
+                                <td>{{ $item->normalisasi }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
 
                 </table>
@@ -83,7 +57,6 @@
                 <table class="table table-bordered">
 
                     <thead class="text-center">
-
                         <tr>
                             <th>Jenis Es</th>
                             <th>C1</th>
@@ -92,30 +65,31 @@
                             <th>C4</th>
                             <th>C5</th>
                         </tr>
-
                     </thead>
 
                     <tbody class="text-center">
-
-                        <tr>
-                            <td>Es Alpukat</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>100</td>
-                        </tr>
-
+                        @forelse ($penilaian as $item)
+                            <tr>
+                                <td>{{ $item->nama_es }}</td>
+                                <td>{{ $item->c1 }}</td>
+                                <td>{{ $item->c2 }}</td>
+                                <td>{{ $item->c3 }}</td>
+                                <td>{{ $item->c4 }}</td>
+                                <td>{{ $item->c5 }}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="6" class="text-center">Belum ada data penilaian</td>
+                            </tr>
+                        @endforelse
                     </tbody>
 
                 </table>
 
                 <div class="mt-4 text-right">
-
-                    <button class="btn btn-primary btn-lg">
+                    <a href="{{ route('smart.hasil') }}" class="btn btn-primary btn-lg">
                         HITUNG SMART
-                    </button>
-
+                    </a>
                 </div>
 
             </div>

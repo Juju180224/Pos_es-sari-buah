@@ -35,15 +35,37 @@ class SmartController extends Controller
 
         return view('smart.penilaian', compact('penilaian'));
     }
-    public function proses()
-    {
-        $kriteria = DB::table('smart_kriteria')->get();
-        $alternatif = DB::table('smart_alternatif')->get();
-        $penilaian = DB::table('smart_penilaian')->get();
+   public function proses()
+{
+    $kriteria = DB::table('smart_kriteria')->get();
 
-        return view('smart.proses', compact('kriteria', 'alternatif', 'penilaian'));
-    }
+    $totalBobot = $kriteria->sum('bobot');
 
+    // Hitung normalisasi bobot untuk setiap kriteria
+    $kriteria = $kriteria->map(function ($item) use ($totalBobot) {
+        $item->normalisasi = $totalBobot > 0
+            ? round($item->bobot / $totalBobot, 2)
+            : 0;
+        return $item;
+    });
+
+    $penilaian = DB::table('smart_penilaian')
+        ->join(
+            'smart_alternatif',
+            'smart_penilaian.id_alternatif',
+            '=',
+            'smart_alternatif.id'
+        )
+        ->select(
+            'smart_penilaian.*',
+            'smart_alternatif.nama_es as nama_es'
+        )
+        ->get();
+
+    $alternatif = DB::table('smart_alternatif')->get();
+
+    return view('smart.proses', compact('kriteria', 'alternatif', 'penilaian'));
+}
     public function hasil()
     {
         $kriteria = DB::table('smart_kriteria')->get();
