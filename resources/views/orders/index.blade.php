@@ -98,6 +98,14 @@
                                         {{ __('order.Pay_Partial') }}
                                     </button>
                                 @endif
+
+                                <!-- PRINT RECEIPT (hanya jika sudah ada pembayaran) -->
+                                @if ($orderReceived > 0)
+                                    <a href="{{ route('orders.receipt', $order->id) }}" target="_blank"
+                                        class="btn btn-sm btn-info">
+                                        <ion-icon size="small" name="print"></ion-icon>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

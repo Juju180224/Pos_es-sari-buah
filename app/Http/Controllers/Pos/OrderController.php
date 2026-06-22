@@ -108,12 +108,6 @@ class OrderController extends Controller
                 $cartItems
             ) {
 
-                /*
-                |--------------------------------------------------------------------------
-                | CREATE ORDER
-                |--------------------------------------------------------------------------
-                */
-
                 $order = Order::create([
 
                     'customer_id' => $request->customer_id,
@@ -122,12 +116,6 @@ class OrderController extends Controller
 
                     'status' => 'pending'
                 ]);
-
-                /*
-                |--------------------------------------------------------------------------
-                | SAVE ORDER ITEMS
-                |--------------------------------------------------------------------------
-                */
 
                 foreach ($cartItems as $item) {
 
@@ -141,21 +129,9 @@ class OrderController extends Controller
                     );
                 }
 
-                /*
-                |--------------------------------------------------------------------------
-                | CLEAR CART
-                |--------------------------------------------------------------------------
-                */
-
                 $authUser
                     ->cart()
                     ->detach();
-
-                /*
-                |--------------------------------------------------------------------------
-                | CREATE PAYMENT
-                |--------------------------------------------------------------------------
-                */
 
                 $order->payments()->create([
 
@@ -257,6 +233,23 @@ class OrderController extends Controller
                         )
                 ])
             );
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | PRINT RECEIPT
+    |--------------------------------------------------------------------------
+    */
+
+    public function receipt(Order $order)
+    {
+        $order->load(['items.product', 'payments', 'customer', 'user']);
+
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadView('orders.receipt', ['order' => $order]);
+        $pdf->setPaper([0, 0, 226.77, 841.89], 'portrait'); // 80mm width
+
+        return $pdf->stream("order-receipt-{$order->id}.pdf");
     }
 
     /*

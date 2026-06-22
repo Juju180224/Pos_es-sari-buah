@@ -92,6 +92,13 @@ Route::prefix('admin')
             ->name('settings.store');
 
         /*
+        | ORDER RECEIPT (harus didaftarkan SEBELUM Route::resource('orders', ...)
+        | agar tidak konflik dengan pattern /orders/{order})
+        */
+        Route::get('/orders/{order}/receipt', [OrderController::class, 'receipt'])
+            ->name('orders.receipt');
+
+        /*
         | MASTER DATA
         */
         Route::resource('products', ProductController::class);
