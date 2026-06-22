@@ -238,18 +238,17 @@ class OrderController extends Controller
     | PRINT RECEIPT
     |--------------------------------------------------------------------------
     */
+    
+public function receipt(Order $order)
+   {
+       $order->load(['items.product', 'payments', 'customer', 'user']);
 
-    public function receipt(Order $order)
-    {
-        $order->load(['items.product', 'payments', 'customer', 'user']);
+       $pdf = app('dompdf.wrapper');
+       $pdf->loadView('orders.receipt', ['order' => $order]);
+       $pdf->setPaper([0, 0, 226.77, 841.89], 'portrait'); // 80mm width
 
-        $pdf = app('dompdf.wrapper');
-        $pdf->loadView('orders.receipt', ['order' => $order]);
-        $pdf->setPaper([0, 0, 226.77, 841.89], 'portrait'); // 80mm width
-
-        return $pdf->stream("order-receipt-{$order->id}.pdf");
-    }
-
+       return $pdf->stream("order-receipt-{$order->id}.pdf");
+   }
     /*
     |--------------------------------------------------------------------------
     | CREATE ORDER ITEM
