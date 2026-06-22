@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->dropForeign(['product_id']);
             $table->dropColumn('product_id');
             $table->foreignId('raw_material_id')
+                ->nullable()
                 ->after('purchase_id')
                 ->constrained('raw_materials')
                 ->cascadeOnDelete();
@@ -23,6 +24,7 @@ return new class extends Migration {
             $table->dropForeign(['raw_material_id']);
             $table->dropColumn('raw_material_id');
             $table->foreignId('product_id')
+                ->nullable()
                 ->after('purchase_id')
                 ->constrained('products')
                 ->cascadeOnDelete();
