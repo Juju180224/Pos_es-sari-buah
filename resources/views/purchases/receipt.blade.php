@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Purchase Receipt #{{ $purchase->id }}</title>
+    <title>Order Receipt #{{ $order->id }}</title>
     <style>
         * {
             margin: 0;
@@ -157,10 +157,21 @@
     </style>
 </head>
 <body>
+
+@php
+    $orderTotal = $order->total();
+    $orderReceived = $order->receivedAmount();
+    $orderRemaining = $orderTotal - $orderReceived;
+
+    $statusLabel = $orderReceived == 0
+        ? 'BELUM DIBAYAR'
+        : ($orderReceived < $orderTotal ? 'SEBAGIAN' : 'LUNAS');
+@endphp
+
 <!-- Header -->
 <div class="header">
     <h1>{{ config('app.name') }}</h1>
-    <p>PURCHASE RECEIPT</p>
+    <p>STRUK PENJUALAN</p>
     @if(config('settings.store_address'))
         <p>{{ config('settings.store_address') }}</p>
     @endif
@@ -169,45 +180,39 @@
     @endif
 </div>
 
-<!-- Purchase Info -->
+<!-- Order Info -->
 <div class="section">
     <div class="info-row">
         <span class="info-label">Receipt #:</span>
-        <span class="info-value">{{ str_pad($purchase->id, 6, '0', STR_PAD_LEFT) }}</span>
+        <span class="info-value">{{ str_pad($order->id, 6, '0', STR_PAD_LEFT) }}</span>
     </div>
     <div class="info-row">
         <span class="info-label">Date:</span>
-        <span class="info-value">{{ $purchase->purchase_date->format('d/m/Y H:i') }}</span>
+        <span class="info-value">{{ $order->created_at->format('d/m/Y H:i') }}</span>
     </div>
     <div class="info-row">
         <span class="info-label">Status:</span>
         <span class="info-value">
-                <span class="status-badge">{{ strtoupper($purchase->status) }}</span>
-            </span>
+            <span class="status-badge">{{ $statusLabel }}</span>
+        </span>
     </div>
     <div class="info-row">
-        <span class="info-label">Created By:</span>
-        <span class="info-value">{{ $purchase->user->name }}</span>
+        <span class="info-label">Kasir:</span>
+        <span class="info-value">{{ $order->user->name ?? 'QR Order' }}</span>
     </div>
 </div>
 
-<!-- Supplier Info -->
+<!-- Customer Info -->
 <div class="section">
-    <div class="section-title">Supplier Information</div>
+    <div class="section-title">Customer Information</div>
     <div class="info-row">
         <span class="info-label">Name:</span>
-        <span class="info-value">{{ $purchase->supplier->first_name }} {{ $purchase->supplier->last_name }}</span>
+        <span class="info-value">{{ $order->getCustomerName() }}</span>
     </div>
-    @if($purchase->supplier->phone)
+    @if($order->customer && $order->customer->phone)
         <div class="info-row">
             <span class="info-label">Phone:</span>
-            <span class="info-value">{{ $purchase->supplier->phone }}</span>
-        </div>
-    @endif
-    @if($purchase->supplier->email)
-        <div class="info-row">
-            <span class="info-label">Email:</span>
-            <span class="info-value">{{ $purchase->supplier->email }}</span>
+            <span class="info-value">{{ $order->customer->phone }}</span>
         </div>
     @endif
 </div>
@@ -224,14 +229,18 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($purchase->items as $item)
+        @foreach($order->items as $item)
             <tr>
                 <td class="item-name">
-                    {{ $item->product->name }}<br>
-                    <small style="font-size: 9px;">{{ $item->product->barcode }}</small>
+                    {{ $item->product->name ?? 'Produk Dihapus' }}<br>
+                    <small style="font-size: 9px;">
+                        {{ config('settings.currency_symbol') }}{{ number_format($item->price, 2) }} / pcs
+                    </small>
                 </td>
                 <td class="item-qty">{{ $item->quantity }}</td>
-                <td class="item-price">{{ config('settings.currency_symbol') }}{{ number_format($item->subtotal, 2) }}</td>
+                <td class="item-price">
+                    {{ config('settings.currency_symbol') }}{{ number_format($item->price * $item->quantity, 2) }}
+                </td>
             </tr>
         @endforeach
         </tbody>
@@ -242,29 +251,49 @@
 <div class="total-section">
     <div class="total-row">
         <span>Subtotal:</span>
-        <span>{{ config('settings.currency_symbol') }}{{ number_format($purchase->total_amount, 2) }}</span>
+        <span>{{ config('settings.currency_symbol') }}{{ number_format($orderTotal, 2) }}</span>
     </div>
     <div class="total-row grand-total">
         <span>TOTAL:</span>
-        <span>{{ config('settings.currency_symbol') }}{{ number_format($purchase->total_amount, 2) }}</span>
+        <span>{{ config('settings.currency_symbol') }}{{ number_format($orderTotal, 2) }}</span>
+    </div>
+    <div class="total-row">
+        <span>Dibayar:</span>
+        <span>{{ config('settings.currency_symbol') }}{{ number_format($orderReceived, 2) }}</span>
+    </div>
+    <div class="total-row">
+        <span>Sisa:</span>
+        <span>{{ config('settings.currency_symbol') }}{{ number_format($orderRemaining, 2) }}</span>
     </div>
     <div class="info-row" style="margin-top: 10px;">
         <span class="info-label">Total Items:</span>
-        <span class="info-value">{{ $purchase->items->sum('quantity') }} pcs</span>
+        <span class="info-value">{{ $order->items->sum('quantity') }} pcs</span>
     </div>
 </div>
 
-<!-- Notes -->
-@if($purchase->notes)
+<!-- Payment History -->
+@if($order->payments->isNotEmpty())
     <div class="section">
-        <div class="section-title">Notes</div>
-        <p style="font-size: 10px;">{{ $purchase->notes }}</p>
+        <div class="section-title">Riwayat Pembayaran</div>
+        @foreach($order->payments as $payment)
+            <div class="info-row">
+                <span class="info-label" style="font-weight: normal;">
+                    {{ $payment->created_at->format('d/m/Y H:i') }}
+                    @if(!empty($payment->payment_method))
+                        ({{ strtoupper($payment->payment_method) }})
+                    @endif
+                </span>
+                <span class="info-value">
+                    {{ config('settings.currency_symbol') }}{{ number_format($payment->amount, 2) }}
+                </span>
+            </div>
+        @endforeach
     </div>
 @endif
 
 <!-- Barcode -->
 <div class="barcode">
-    *{{ str_pad($purchase->id, 6, '0', STR_PAD_LEFT) }}*
+    *{{ str_pad($order->id, 6, '0', STR_PAD_LEFT) }}*
 </div>
 
 <!-- Footer -->

@@ -134,12 +134,10 @@ class OrderController extends Controller
                     ->detach();
 
                 $order->payments()->create([
-
-                    'amount' => $request->amount,
-
-                    'user_id' => $authUser->id,
-                ]);
-
+    'amount' => $request->amount,
+    'payment_method' => $request->payment_method ?? 'cash',
+    'user_id' => $authUser->id,
+]);
                 return $order;
             });
 
