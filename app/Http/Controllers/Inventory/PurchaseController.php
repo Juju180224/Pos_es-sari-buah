@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Inventory;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Purchase\PurchaseStoreRequest;
 use App\Http\Requests\Purchase\PurchaseUpdateRequest;
-use App\Models\Product;
+use App\Models\Order;
 use App\Models\Purchase;
+use App\Models\RawMaterial;
 use App\Models\Supplier;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -34,7 +35,8 @@ class PurchaseController extends Controller
     }
 
     /**
-     * Get purchases data as JSON for AJAX filtering
+     * Get purchases data as JSON for AJAX filtering, plus ringkasan
+     * pengeluaran (pembelian bahan baku) vs pemasukan (penjualan).
      */
     public function data(Request $request): JsonResponse
     {
@@ -45,7 +47,40 @@ class PurchaseController extends Controller
                 ->orderBy($request->get('sort_by', 'purchase_date'), $request->get('sort_order', 'desc'))
                 ->paginate(10);
 
-            return response()->json($purchases);
+            // --- Ringkasan Pengeluaran (pembelian bahan baku) ---
+            $expenseQuery = Purchase::query()->where('status', 'completed');
+
+            if ($request->filled('date_from')) {
+                $expenseQuery->where('purchase_date', '>=', $request->date_from);
+            }
+            if ($request->filled('date_to')) {
+                $expenseQuery->where('purchase_date', '<=', $request->date_to);
+            }
+
+            $totalExpense = (float) $expenseQuery->sum('total_amount');
+
+            // --- Ringkasan Pemasukan (penjualan / orders) ---
+            $incomeQuery = Order::query();
+
+            if ($request->filled('date_from')) {
+                $incomeQuery->where('created_at', '>=', $request->date_from);
+            }
+            if ($request->filled('date_to')) {
+                $incomeQuery->where('created_at', '<=', $request->date_to . ' 23:59:59');
+            }
+
+            $totalIncome = (float) $incomeQuery->get()->sum(
+                fn ($order) => $order->receivedAmount()
+            );
+
+            $response = $purchases->toArray();
+            $response['summary'] = [
+                'total_expense' => $totalExpense,
+                'total_income' => $totalIncome,
+                'net' => $totalIncome - $totalExpense,
+            ];
+
+            return response()->json($response);
         } catch (\Exception $e) {
             return response()->json([
                 'error' => $e->getMessage(),
@@ -73,7 +108,6 @@ class PurchaseController extends Controller
         try {
             DB::beginTransaction();
 
-            // Create purchase
             $purchase = Purchase::create([
                 'supplier_id' => $request->supplier_id,
                 'user_id' => Auth::id(),
@@ -83,26 +117,27 @@ class PurchaseController extends Controller
                 'notes' => $request->notes,
             ]);
 
-            // Create purchase items
             foreach ($request->items as $item) {
                 $purchase->items()->create([
-                    'product_id' => $item['product_id'],
+                    'raw_material_id' => $item['raw_material_id'],
                     'quantity' => $item['quantity'],
                     'purchase_price' => $item['purchase_price'],
                 ]);
 
-                // If status is completed, update stock and purchase price
+                // Jika status completed, update stok & harga beli bahan baku
                 if ($request->status === 'completed') {
-                    $product = Product::find($item['product_id']);
-                    $product->quantity += $item['quantity'];
-                    $product->purchase_price = $item['purchase_price'];
-                    $product->save();
+                    $rawMaterial = RawMaterial::find($item['raw_material_id']);
+
+                    if ($rawMaterial) {
+                        $rawMaterial->stock += $item['quantity'];
+                        $rawMaterial->purchase_price = $item['purchase_price'];
+                        $rawMaterial->save();
+                    }
                 }
             }
 
             DB::commit();
 
-            // Clear purchase cart
             $request->user()->purchaseCart()->detach();
 
             return redirect()->route('purchases.index')
@@ -122,7 +157,7 @@ class PurchaseController extends Controller
      */
     public function show(Purchase $purchase): View
     {
-        $purchase->load(['supplier', 'user', 'items.product']);
+        $purchase->load(['supplier', 'user', 'items.rawMaterial']);
 
         return view('purchases.show', ['purchase' => $purchase]);
     }
@@ -138,7 +173,6 @@ class PurchaseController extends Controller
             $oldStatus = $purchase->status;
             $newStatus = $request->status;
 
-            // Update purchase
             $purchase->update([
                 'supplier_id' => $request->supplier_id,
                 'purchase_date' => $request->purchase_date,
@@ -147,22 +181,23 @@ class PurchaseController extends Controller
                 'notes' => $request->notes,
             ]);
 
-            // Handle stock changes based on status transition
             if ($oldStatus !== $newStatus) {
                 foreach ($purchase->items as $item) {
-                    $product = $item->product;
+                    $rawMaterial = $item->rawMaterial;
 
-                    // If changing from completed to pending/cancelled: decrease stock
-                    if ($oldStatus === 'completed' && in_array($newStatus, ['pending', 'cancelled'])) {
-                        $product->quantity -= $item->quantity;
-                        $product->save();
+                    if (!$rawMaterial) {
+                        continue;
                     }
 
-                    // If changing from pending/cancelled to completed: increase stock
+                    if ($oldStatus === 'completed' && in_array($newStatus, ['pending', 'cancelled'])) {
+                        $rawMaterial->stock -= $item->quantity;
+                        $rawMaterial->save();
+                    }
+
                     if (in_array($oldStatus, ['pending', 'cancelled']) && $newStatus === 'completed') {
-                        $product->quantity += $item->quantity;
-                        $product->purchase_price = $item->purchase_price;
-                        $product->save();
+                        $rawMaterial->stock += $item->quantity;
+                        $rawMaterial->purchase_price = $item->purchase_price;
+                        $rawMaterial->save();
                     }
                 }
             }
@@ -189,12 +224,14 @@ class PurchaseController extends Controller
         try {
             DB::beginTransaction();
 
-            // If purchase was completed, reverse stock changes
             if ($purchase->status === 'completed') {
                 foreach ($purchase->items as $item) {
-                    $product = $item->product;
-                    $product->quantity -= $item->quantity;
-                    $product->save();
+                    $rawMaterial = $item->rawMaterial;
+
+                    if ($rawMaterial) {
+                        $rawMaterial->stock -= $item->quantity;
+                        $rawMaterial->save();
+                    }
                 }
             }
 
@@ -218,11 +255,11 @@ class PurchaseController extends Controller
      */
     public function receipt(Purchase $purchase)
     {
-        $purchase->load(['supplier', 'user', 'items.product']);
+        $purchase->load(['supplier', 'user', 'items.rawMaterial']);
 
         $pdf = app('dompdf.wrapper');
         $pdf->loadView('purchases.receipt', ['purchase' => $purchase]);
-        $pdf->setPaper([0, 0, 226.77, 841.89], 'portrait'); // 80mm width
+        $pdf->setPaper([0, 0, 226.77, 841.89], 'portrait');
 
         return $pdf->stream("purchase-receipt-{$purchase->id}.pdf");
     }
