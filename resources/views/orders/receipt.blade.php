@@ -45,7 +45,7 @@
 
 <div class="header">
     <h1>{{ config('app.name') }}</h1>
-    <p>STRUK PENJUALAN</p>
+    <p>STRUK PEMBELIAN</p>
     @if(config('settings.store_address'))
         <p>{{ config('settings.store_address') }}</p>
     @endif
