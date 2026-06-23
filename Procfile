@@ -1,1 +1,1 @@
-web: php artisan optimize:clear && heroku-php-apache2 public/
+web: php artisan storage:link --force && php artisan optimize:clear && heroku-php-apache2 public/
