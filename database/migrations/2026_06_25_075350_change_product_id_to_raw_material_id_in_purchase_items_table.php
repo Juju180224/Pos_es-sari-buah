@@ -11,24 +11,21 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::table('user_purchase_cart', function (Blueprint $table): void {
-            // Drop the old unique constraint first (it references product_id)
-            $table->dropUnique(['user_id', 'product_id']);
-
-            // Drop foreign key & old column
+        Schema::table('purchase_items', function (Blueprint $table): void {
+            // Drop foreign key & kolom lama
             $table->dropForeign(['product_id']);
             $table->dropColumn('product_id');
 
-            // Add new column
+            // Tambah kolom baru
             $table->foreignIdFor(RawMaterial::class)
                 ->nullable()
-                ->after('user_id')
+                ->after('purchase_id')
                 ->constrained()
                 ->cascadeOnDelete();
         });
 
-        Schema::table('user_purchase_cart', function (Blueprint $table): void {
-            $table->unique(['user_id', 'raw_material_id']);
+        Schema::table('purchase_items', function (Blueprint $table): void {
+            $table->index(['raw_material_id', 'purchase_id']);
         });
     }
 
@@ -37,19 +34,14 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::table('user_purchase_cart', function (Blueprint $table): void {
-            $table->dropUnique(['user_id', 'raw_material_id']);
+        Schema::table('purchase_items', function (Blueprint $table): void {
             $table->dropForeign(['raw_material_id']);
             $table->dropColumn('raw_material_id');
 
-            $table->foreignId('product_id')
+            $table->foreignIdFor(\App\Models\Product::class)
                 ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
-        });
-
-        Schema::table('user_purchase_cart', function (Blueprint $table): void {
-            $table->unique(['user_id', 'product_id']);
         });
     }
 };
