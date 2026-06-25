@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\RawMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class RawMaterialController extends Controller
@@ -13,7 +14,7 @@ class RawMaterialController extends Controller
     /**
      * Display a listing of raw materials.
      */
-    public function index(Request $request): View
+    public function index(Request $request): View|Response
     {
         $rawMaterials = RawMaterial::query()
             ->when($request->search, function ($query, $search) {
@@ -22,6 +23,10 @@ class RawMaterialController extends Controller
             ->orderBy('name')
             ->paginate(10)
             ->withQueryString();
+
+        if ($request->wantsJson()) {
+            return response($rawMaterials);
+        }
 
         return view('raw-materials.index', compact('rawMaterials'));
     }

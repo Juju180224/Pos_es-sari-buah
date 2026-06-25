@@ -14,7 +14,7 @@ class ChangePurchaseCartQtyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_id' => 'required|exists:products,id',
+            'raw_material_id' => 'required|exists:raw_materials,id',
             'quantity' => 'required|integer|min:1',
         ];
     }
@@ -22,8 +22,8 @@ class ChangePurchaseCartQtyRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'product_id.required' => __('Product is required'),
-            'product_id.exists' => __('Product not found'),
+            'raw_material_id.required' => __('Raw material is required'),
+            'raw_material_id.exists' => __('Raw material not found'),
             'quantity.required' => __('Quantity is required'),
             'quantity.integer' => __('Quantity must be a number'),
             'quantity.min' => __('Quantity must be at least 1'),

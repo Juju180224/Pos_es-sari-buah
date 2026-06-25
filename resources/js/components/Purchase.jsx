@@ -9,7 +9,7 @@ class Purchase extends Component {
         super(props);
         this.state = {
             cart: [],
-            products: [],
+            rawMaterials: [],
             suppliers: [],
             search: "",
             supplier_id: "",
@@ -20,11 +20,11 @@ class Purchase extends Component {
         };
 
         this.loadCart = this.loadCart.bind(this);
-        this.loadProducts = this.loadProducts.bind(this);
+        this.loadRawMaterials = this.loadRawMaterials.bind(this);
         this.loadSuppliers = this.loadSuppliers.bind(this);
         this.handleChangeSearch = this.handleChangeSearch.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
-        this.addProductToCart = this.addProductToCart.bind(this);
+        this.addRawMaterialToCart = this.addRawMaterialToCart.bind(this);
         this.handleChangeQty = this.handleChangeQty.bind(this);
         this.handleChangePrice = this.handleChangePrice.bind(this);
         this.handleClickDelete = this.handleClickDelete.bind(this);
@@ -40,7 +40,7 @@ class Purchase extends Component {
     componentDidMount() {
         this.loadTranslations();
         this.loadSuppliers();
-        this.loadProducts();
+        this.loadRawMaterials();
         this.loadCart();
     }
 
@@ -64,14 +64,7 @@ class Purchase extends Component {
                 'Content-Type': 'application/json'
             }
         }).then((res) => {
-            console.log('Suppliers API Response:', res.data);
-            console.log('Is Array?', Array.isArray(res.data));
-            console.log('Has data property?', res.data.data);
-
-            // Handle both array and paginated response
             const suppliers = Array.isArray(res.data) ? res.data : (res.data.data || []);
-            console.log('Final suppliers:', suppliers);
-
             this.setState({ suppliers });
         }).catch((error) => {
             console.error("Error loading suppliers:", error);
@@ -79,19 +72,20 @@ class Purchase extends Component {
         });
     }
 
-    loadProducts(search = "") {
+    loadRawMaterials(search = "") {
         const query = !!search ? `?search=${search}` : "";
-        axios.get(`/admin/products${query}`, {
+        axios.get(`/admin/raw-materials${query}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         }).then((res) => {
-            const products = res.data.data || [];
-            this.setState({ products });
+            // Handle both paginated and plain array responses
+            const rawMaterials = Array.isArray(res.data) ? res.data : (res.data.data || []);
+            this.setState({ rawMaterials });
         }).catch((error) => {
-            console.error("Error loading products:", error);
-            this.setState({ products: [] });
+            console.error("Error loading raw materials:", error);
+            this.setState({ rawMaterials: [] });
         });
     }
 
@@ -117,19 +111,19 @@ class Purchase extends Component {
 
     handleSearch(event) {
         if (event.keyCode === 13) {
-            this.loadProducts(event.target.value);
+            this.loadRawMaterials(event.target.value);
         }
     }
 
-    addProductToCart(product) {
-        // Check if product already in cart
-        let cartItem = this.state.cart.find((c) => c.id === product.id);
+    addRawMaterialToCart(rawMaterial) {
+        // Check if raw material already in cart
+        let cartItem = this.state.cart.find((c) => c.id === rawMaterial.id);
 
         if (cartItem) {
             // Update quantity
             this.setState({
                 cart: this.state.cart.map((c) => {
-                    if (c.id === product.id) {
+                    if (c.id === rawMaterial.id) {
                         c.pivot.quantity = c.pivot.quantity + 1;
                     }
                     return c;
@@ -137,32 +131,32 @@ class Purchase extends Component {
             });
         } else {
             // Add new item with purchase price
-            const newProduct = {
-                ...product,
+            const newItem = {
+                ...rawMaterial,
                 pivot: {
                     quantity: 1,
-                    purchase_price: product.purchase_price || 0,
-                    product_id: product.id,
+                    purchase_price: rawMaterial.purchase_price || 0,
+                    raw_material_id: rawMaterial.id,
                     user_id: 1,
                 },
             };
-            this.setState({ cart: [...this.state.cart, newProduct] });
+            this.setState({ cart: [...this.state.cart, newItem] });
         }
 
         // Sync with backend
         axios
-            .post("/admin/purchase-cart", { barcode: product.barcode })
+            .post("/admin/purchase-cart", { raw_material_id: rawMaterial.id })
             .then((res) => {
                 console.log("Added to cart:", res.data);
             })
             .catch((err) => {
-                Swal.fire("Error!", err.response?.data?.message || "Failed to add product", "error");
+                Swal.fire("Error!", err.response?.data?.message || "Failed to add raw material", "error");
             });
     }
 
-    handleChangeQty(product_id, qty) {
+    handleChangeQty(raw_material_id, qty) {
         const cart = this.state.cart.map((c) => {
-            if (c.id === product_id) {
+            if (c.id === raw_material_id) {
                 c.pivot.quantity = qty;
             }
             return c;
@@ -172,7 +166,7 @@ class Purchase extends Component {
         if (!qty) return;
 
         axios
-            .post("/admin/purchase-cart/change-qty", { product_id, quantity: qty })
+            .post("/admin/purchase-cart/change-qty", { raw_material_id, quantity: qty })
             .then((res) => {
                 console.log("Quantity updated");
             })
@@ -181,9 +175,9 @@ class Purchase extends Component {
             });
     }
 
-    handleChangePrice(product_id, price) {
+    handleChangePrice(raw_material_id, price) {
         const cart = this.state.cart.map((c) => {
-            if (c.id === product_id) {
+            if (c.id === raw_material_id) {
                 c.pivot.purchase_price = price;
             }
             return c;
@@ -193,7 +187,7 @@ class Purchase extends Component {
         if (!price) return;
 
         axios
-            .post("/admin/purchase-cart/change-price", { product_id, purchase_price: price })
+            .post("/admin/purchase-cart/change-price", { raw_material_id, purchase_price: price })
             .then((res) => {
                 console.log("Price updated");
             })
@@ -207,11 +201,11 @@ class Purchase extends Component {
         return sum(total).toFixed(2);
     }
 
-    handleClickDelete(product_id) {
+    handleClickDelete(raw_material_id) {
         axios
-            .post("/admin/purchase-cart/delete", { product_id, _method: "DELETE" })
+            .post("/admin/purchase-cart/delete", { raw_material_id, _method: "DELETE" })
             .then((res) => {
-                const cart = this.state.cart.filter((c) => c.id !== product_id);
+                const cart = this.state.cart.filter((c) => c.id !== raw_material_id);
                 this.setState({ cart });
             })
             .catch((err) => {
@@ -253,13 +247,13 @@ class Purchase extends Component {
         }
 
         if (cart.length === 0) {
-            Swal.fire("Error!", "Please add at least one product", "error");
+            Swal.fire("Error!", "Please add at least one item", "error");
             return;
         }
 
         const total_amount = this.getTotal(cart);
         const items = cart.map(c => ({
-            product_id: c.id,
+            raw_material_id: c.id,
             quantity: c.pivot.quantity,
             purchase_price: c.pivot.purchase_price || 0
         }));
@@ -320,7 +314,7 @@ class Purchase extends Component {
     render() {
         const {
             cart = [],
-            products = [],
+            rawMaterials = [],
             suppliers = [],
             search = "",
             supplier_id,
@@ -335,7 +329,7 @@ class Purchase extends Component {
 
         return (
             <div className="row purchase-container">
-                {/* LEFT SIDE - Product Selector */}
+                {/* LEFT SIDE - Raw Material Selector */}
                 <div className="col-lg-8 col-md-7">
                     <div className="card">
                         <div className="card-body">
@@ -343,24 +337,26 @@ class Purchase extends Component {
                                 <input
                                     type="text"
                                     className="form-control form-control-lg"
-                                    placeholder={(translations["search_product"] || "Search Product") + "..."}
+                                    placeholder={(translations["search_product"] || "Search Raw Material") + "..."}
                                     value={search}
                                     onChange={this.handleChangeSearch}
                                     onKeyDown={this.handleSearch}
                                 />
                             </div>
                             <div className="order-product">
-                                {products.map((p) => (
+                                {rawMaterials.map((m) => (
                                     <div
-                                        onClick={() => this.addProductToCart(p)}
-                                        key={p.id}
+                                        onClick={() => this.addRawMaterialToCart(m)}
+                                        key={m.id}
                                         className="item"
                                     >
-                                        <img src={p.image_url} alt={p.name} />
-                                        <h5>{p.name}</h5>
-                                        <small className="text-muted">Stock: {p.quantity}</small>
-                                        {p.purchase_price && (
-                                            <><br /><small className="text-success font-weight-bold">Cost: {window.APP.currency_symbol}{p.purchase_price}</small></>
+                                        <div className="raw-material-icon">
+                                            <i className="fas fa-boxes fa-2x text-secondary"></i>
+                                        </div>
+                                        <h5>{m.name}</h5>
+                                        <small className="text-muted">Stock: {m.stock} {m.unit}</small>
+                                        {m.purchase_price && (
+                                            <><br /><small className="text-success font-weight-bold">Cost: {window.APP.currency_symbol}{m.purchase_price}</small></>
                                         )}
                                     </div>
                                 ))}
@@ -419,7 +415,7 @@ class Purchase extends Component {
                                 <table className="table table-sm table-hover mb-0">
                                     <thead>
                                     <tr>
-                                        <th>Product</th>
+                                        <th>Raw Material</th>
                                         <th width="70">Qty</th>
                                         <th width="90">Price</th>
                                         <th width="40"></th>
