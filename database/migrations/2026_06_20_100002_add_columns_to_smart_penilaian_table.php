@@ -1,23 +1,17 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::table('smart_penilaian', function (Blueprint $table) {
             $table->foreignId('id_alternatif')
-                ->nullable()
-                ->after('id')
-                ->constrained('smart_alternatif')
-                ->cascadeOnDelete();
-
+                  ->after('id')
+                  ->constrained('smart_alternatif')
+                  ->onDelete('cascade');
             $table->decimal('c1', 8, 2)->default(0)->after('id_alternatif');
             $table->decimal('c2', 8, 2)->default(0)->after('c1');
             $table->decimal('c3', 8, 2)->default(0)->after('c2');
@@ -26,9 +20,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::table('smart_penilaian', function (Blueprint $table) {
