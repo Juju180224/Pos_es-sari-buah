@@ -7,15 +7,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('smart_alternatif', function (Blueprint $table) {
-            $table->string('kode_alternatif', 10)->nullable()->after('id');
-        });
+        if (!Schema::hasColumn('smart_alternatif', 'kode_alternatif')) {
+            Schema::table('smart_alternatif', function (Blueprint $table) {
+                $table->string('kode_alternatif', 10)->nullable()->after('id');
+            });
+        }
     }
 
     public function down(): void
     {
-        Schema::table('smart_alternatif', function (Blueprint $table) {
-            $table->dropColumn('kode_alternatif');
-        });
+        if (Schema::hasColumn('smart_alternatif', 'kode_alternatif')) {
+            Schema::table('smart_alternatif', function (Blueprint $table) {
+                $table->dropColumn('kode_alternatif');
+            });
+        }
     }
 };
