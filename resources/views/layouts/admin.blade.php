@@ -21,7 +21,7 @@
     </script>
 
     {{-- SOUND --}}
-    <audio id="notifSound" src="{{ asset('public/mlbb-new-message-notification.mp3') }}"></audio>
+    <audio id="notifSound" src="{{ asset('mlbb-new-message-notification.mp3') }}" preload="auto"></audio>
 
     <style>
         .notif-box {
@@ -80,33 +80,61 @@
 
     {{-- REALTIME SCRIPT --}}
     <script>
-        let lastOrderId = 0;
+        let lastOrderId = null;
 
-        function checkOrder() {
-            fetch('/api/check-order')
+        // unlock autoplay: browser butuh 1 interaksi user dulu sebelum audio bisa auto play
+        document.addEventListener('click', function unlockAudio() {
+            let audio = document.getElementById('notifSound');
+            audio.play().then(() => {
+                audio.pause();
+                audio.currentTime = 0;
+            }).catch(() => {});
+            document.removeEventListener('click', unlockAudio);
+        }, {
+            once: true
+        });
+
+        function checkOrder(isFirstLoad = false) {
+            fetch('{{ route('admin.orders.latest') }}')
                 .then(res => res.json())
                 .then(data => {
 
-                    if (data.id && data.id !== lastOrderId) {
+                    if (!data.id) return;
+
+                    // load pertama kali: cuma catat id, jangan bunyi
+                    if (isFirstLoad) {
+                        lastOrderId = data.id;
+                        return;
+                    }
+
+                    if (data.id !== lastOrderId) {
                         lastOrderId = data.id;
 
                         // bunyi
-                        document.getElementById('notifSound').play();
+                        document.getElementById('notifSound').play().catch(e => {
+                            console.log('Autoplay diblokir, perlu interaksi user dulu:', e);
+                        });
 
                         // tampil notif
                         let box = document.getElementById('notifBox');
+                        box.innerHTML = 'Pesanan baru masuk! #' + data.id +
+                            (data.customer_name ? ' - ' + data.customer_name : '');
                         box.style.display = 'block';
 
                         setTimeout(() => {
                             box.style.display = 'none';
-                        }, 3000);
+                        }, 4000);
                     }
 
-                });
+                })
+                .catch(err => console.error('Gagal cek pesanan:', err));
         }
 
-        // cek tiap 3 detik
-        setInterval(checkOrder, 3000);
+        // load pertama: ambil id terakhir tanpa bunyi
+        checkOrder(true);
+
+        // cek tiap 3 detik setelahnya
+        setInterval(() => checkOrder(false), 3000);
     </script>
 
     @yield('js')

@@ -108,14 +108,16 @@ Route::prefix('admin')
         Route::resource('raw-materials', RawMaterialController::class);
 
         /*
-        | ORDER LATEST
+        | ORDER LATEST (untuk notifikasi suara admin)
         */
         Route::get('/orders/latest', function () {
-            return \App\Models\Order::with('items.product')
-                ->latest()
-                ->take(5)
-                ->get();
-        });
+            $order = \App\Models\Order::latest()->first();
+
+            return response()->json([
+                'id' => $order?->id,
+                'customer_name' => $order?->getCustomerName(),
+            ]);
+        })->name('admin.orders.latest');
 
         /*
         | POS CART
@@ -183,24 +185,24 @@ Route::prefix('admin')
         */
         Route::prefix('smart')->name('smart.')->group(function () {
 
-    // KRITERIA
-    Route::get('/kriteria', [SmartController::class, 'kriteria'])->name('kriteria');
-    Route::post('/kriteria', [SmartController::class, 'storeKriteria'])->name('kriteria.store');
-    Route::put('/kriteria/{id}', [SmartController::class, 'updateKriteria'])->name('kriteria.update');
-    Route::delete('/kriteria/{id}', [SmartController::class, 'destroyKriteria'])->name('kriteria.destroy');
+            // KRITERIA
+            Route::get('/kriteria', [SmartController::class, 'kriteria'])->name('kriteria');
+            Route::post('/kriteria', [SmartController::class, 'storeKriteria'])->name('kriteria.store');
+            Route::put('/kriteria/{id}', [SmartController::class, 'updateKriteria'])->name('kriteria.update');
+            Route::delete('/kriteria/{id}', [SmartController::class, 'destroyKriteria'])->name('kriteria.destroy');
 
-    // ALTERNATIF
-    Route::get('/alternatif', [SmartController::class, 'alternatif'])->name('alternatif');
-    Route::post('/alternatif', [SmartController::class, 'storeAlternatif'])->name('alternatif.store');
-    Route::put('/alternatif/{id}', [SmartController::class, 'updateAlternatif'])->name('alternatif.update');
-    Route::delete('/alternatif/{id}', [SmartController::class, 'destroyAlternatif'])->name('alternatif.destroy');
+            // ALTERNATIF
+            Route::get('/alternatif', [SmartController::class, 'alternatif'])->name('alternatif');
+            Route::post('/alternatif', [SmartController::class, 'storeAlternatif'])->name('alternatif.store');
+            Route::put('/alternatif/{id}', [SmartController::class, 'updateAlternatif'])->name('alternatif.update');
+            Route::delete('/alternatif/{id}', [SmartController::class, 'destroyAlternatif'])->name('alternatif.destroy');
 
-    // PENILAIAN
-    Route::get('/penilaian', [SmartController::class, 'penilaian'])->name('penilaian');
-    Route::post('/penilaian', [SmartController::class, 'storePenilaian'])->name('penilaian.store');
+            // PENILAIAN
+            Route::get('/penilaian', [SmartController::class, 'penilaian'])->name('penilaian');
+            Route::post('/penilaian', [SmartController::class, 'storePenilaian'])->name('penilaian.store');
 
-    // PROSES & HASIL
-    Route::get('/proses', [SmartController::class, 'proses'])->name('proses');
-    Route::get('/hasil', [SmartController::class, 'hasil'])->name('hasil');
-});
+            // PROSES & HASIL
+            Route::get('/proses', [SmartController::class, 'proses'])->name('proses');
+            Route::get('/hasil', [SmartController::class, 'hasil'])->name('hasil');
+        });
     });
